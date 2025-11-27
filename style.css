@@ -148,8 +148,12 @@ body {
 }
 
 .section-img {
-    img 
+    img {
   background-color: transparent;
+}
+img {
+  mix-blend-mode: multiply;
+}
 
 
   width: 250px;
