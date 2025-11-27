@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Keza Portfolio</title>
+  <title>Keza Kevin Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,10 +12,9 @@
     <div class="logo">KEZA</div>
     <nav>
       <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#blog">My Blog</a></li>
       </ul>
@@ -24,26 +23,57 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section id="hero" class="hero">
     <div class="hero-left">
       <h1>Hello, I am <span class="highlight">Keza Kevin</span></h1>
       <h2>WEB DEVELOPER</h2>
       <p>Building the web, one pixel and line at a time.</p>
       <div class="hero-actions">
-        <a href="mailto:keza@example.com" class="btn btn-primary">Email Me</a>
-        <a href="#contact" class="btn btn-outline">Hire Me</a>
+        <a href="mailto:keza@example.com" class="btn btn-primary">Hire Me</a>
+        <a href="#contact" class="btn btn-outline">Email</a>
       </div>
     </div>
     <div class="hero-right">
-      <div class="photo-wrap">
-        <img src="assets/images/keza-photo.jpg" alt="Keza Kevin" />
-        <div class="tech-icons">
-          <img src="assets/images/html5.svg" alt="HTML5" />
-          <img src="assets/images/css3.svg" alt="CSS3" />
-          <img src="assets/images/javascript.svg" alt="JavaScript" />
-          <img src="assets/images/react.svg" alt="React" />
-        </div>
-      </div>
+      <img src="assets/images/keza-profile.png" alt="Keza Kevin" class="hero-img" />
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+      <img src="assets/images/about-robot.png" alt="About Robot" class="section-img" />
+      <p>
+        I’m Keza Kevin, a Kigali-based developer passionate about responsive websites and assistive tech solutions.
+        I blend robotics with web platforms to create impactful, human-centered experiences. I also mentor youth and advocate for vulnerable communities through technology.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-content">
+      <img src="assets/images/skills-robot.png" alt="Skills Robot" class="section-img" />
+      <ul class="skills-list">
+        <li class="skill-chip">HTML</li>
+        <li class="skill-chip">CSS</li>
+        <li class="skill-chip">JavaScript</li>
+        <li class="skill-chip">React</li>
+        <li class="skill-chip">Node.js</li>
+        <li class="skill-chip">Python</li>
+        <li class="skill-chip">Figma</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <h2 class="section-title">Contact Me</h2>
+    <div class="contact-content">
+      <img src="assets/images/contact-character.png" alt="Contact Character" class="section-img" />
+      <p>Let’s build something useful together! Reach out via email or book a call.</p>
+      <a href="mailto:keza@example.com" class="btn btn-primary">Email Me</a>
     </div>
   </section>
 
