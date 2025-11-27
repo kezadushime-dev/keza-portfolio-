@@ -1,25 +1,18 @@
-/* Reset and base styles */
+/* Reset */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: #0f0f12;
-  color: #e9e9ee;
+  background-color: #0f0f12;   /* Dark background */
+  color: #e9e9ee;              /* Light text */
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
 }
 
-/* Container */
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Navigation */
+/* Navigation Bar */
 .navbar {
   background-color: #15161a;
   padding: 16px 20px;
@@ -30,9 +23,9 @@ body {
 }
 
 .navbar .logo {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
-  color: #6c7cff;
+  color: #6c7cff; /* Accent color */
 }
 
 .navbar ul {
@@ -46,6 +39,7 @@ body {
   text-decoration: none;
   padding: 8px 12px;
   border-radius: 6px;
+  transition: 0.3s;
 }
 
 .navbar a:hover {
@@ -56,19 +50,17 @@ body {
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(to bottom, #0f0f12, #15161a);
+  padding: 100px 20px;
 }
 
 .hero h1 {
-  font-size: 40px;
+  font-size: 42px;
   color: #6c7cff;
   margin-bottom: 10px;
 }
 
 .hero h2 {
   font-size: 24px;
-  color: #e9e9ee;
   margin-bottom: 20px;
 }
 
@@ -78,19 +70,14 @@ body {
   margin-bottom: 30px;
 }
 
-.hero .buttons {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
+/* Buttons */
 .btn {
+  display: inline-block;
   padding: 12px 20px;
   border-radius: 8px;
   font-weight: bold;
   text-decoration: none;
-  transition: background 0.3s ease;
+  transition: 0.3s;
 }
 
 .btn-primary {
@@ -103,16 +90,15 @@ body {
 }
 
 .btn-outline {
-  background-color: transparent;
-  color: #e9e9ee;
   border: 1px solid #6c7cff;
+  color: #e9e9ee;
 }
 
 .btn-outline:hover {
   background-color: #21232a;
 }
 
-/* Icons Section */
+/* Tech Icons */
 .tech-icons {
   display: flex;
   justify-content: center;
@@ -132,8 +118,8 @@ body {
 
 /* Testimonial */
 .testimonial {
-  margin-top: 60px;
-  text-align: left;
+  margin: 60px auto;
+  max-width: 600px;
   background-color: #1a1b20;
   padding: 20px;
   border-left: 4px solid #6c7cff;
@@ -154,9 +140,5 @@ body {
 
   .hero h2 {
     font-size: 20px;
-  }
-
-  .tech-icons {
-    flex-wrap: wrap;
   }
 }
