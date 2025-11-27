@@ -1,142 +1,21 @@
-/* Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-  background: linear-gradient(135deg, #0f0f12, #15161a);
-  color: #e9e9ee;
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.6;
-}
-
-/* Navbar */
-.navbar {
-  background: rgba(15, 15, 18, 0.95);
-  padding: 16px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.logo {
-  font-size: 22px;
-  font-weight: bold;
-  color: #6c7cff;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links a {
-  color: #a9acb6;
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: 0.3s;
-}
-
-.nav-links a:hover {
-  background-color: #21232a;
-  color: #e9e9ee;
-}
-
-/* Buttons */
-.btn {
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.btn-primary {
-  background-color: #6c7cff;
-  color: #0d0e13;
-}
-
-.btn-primary:hover {
-  background-color: #5b68e6;
-}
-
-.btn-outline {
-  border: 1px solid #6c7cff;
-  color: #e9e9ee;
-}
-
-.btn-outline:hover {
-  background-color: #21232a;
-}
-
-/* Hero Section */
-.hero {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 80px 20px;
-}
-
-.hero-left {
-  flex: 1;
-  max-width: 500px;
-}
-
-.hero-left h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
-}
-
-.hero-left h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.hero-left p {
-  color: #a9acb6;
-  font-size: 16px;
-  margin-bottom: 30px;
-}
-
-.highlight {
-  color: #6c7cff;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.hero-right {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.hero-img {
-  width: 250px;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-}
-
 /* Sections */
 .section {
   padding: 60px 20px;
-  text-align: center;
+  margin: 40px auto;         /* adds margin around each section */
+  max-width: 1000px;         /* keeps content centered and not too wide */
+  text-align: center;        /* centers text inside sections */
 }
 
+/* Section Titles */
 .section-title {
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 20px;
   color: #6c7cff;
+  text-align: center;        /* ensures titles are centered */
 }
 
+/* About, Skills, Contact content */
 .about-content,
 .skills-content,
 .contact-content {
@@ -144,63 +23,31 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  text-align: center;
+  text-align: center;        /* centers text inside these blocks */
+  margin: 20px 0;            /* spacing between content blocks */
 }
 
-.section-img {
-    img {
-  background-color: transparent;
-}
-img {
-  mix-blend-mode: multiply;
-}
-
-
-  width: 250px;
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-}
-
-.skills-list {
-  list-style: none;
+/* Hero Section */
+.hero {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  justify-content: center;   /* centers hero content horizontally */
+  align-items: center;
+  padding: 80px 20px;
+  margin: 40px auto;         /* margin around hero section */
+  max-width: 1200px;         /* keeps hero centered */
+}
+
+.hero-left {
+  flex: 1;
+  max-width: 500px;
+  text-align: center;        /* centers hero text */
+  margin: 20px auto;         /* adds spacing around hero text */
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
   justify-content: center;
-}
-
-.skill-chip {
-  background-color: #1a1b20;
-  color: #e9e9ee;
-  border: 1px solid #2a2c33;
-  padding: 8px 12px;
-  border-radius: 20px;
-  font-size: 14px;
-}
-
-/* Testimonial */
-.testimonial {
-  margin: 60px auto;
-  max-width: 600px;
-  background-color: #1a1b20;
-  padding: 20px;
-  border-left: 4px solid #6c7cff;
-  color: #a9acb6;
-  font-style: italic;
-  text-align: left;
-}
-
-/* Responsive */
-@media (min-width: 768px) {
-  .about-content,
-  .skills-content,
-  .contact-content {
-    flex-direction: row;
-    text-align: left;
-  }
-
-  .section-img {
-    flex: 0 0 250px;
-  }
+  margin: 20px auto;         /* spacing around hero image */
 }
