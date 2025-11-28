@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rise of AI in Rwanda | Keza Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="glass-nav">
+        <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="blog.html">My Blog</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#contact">Connect</a></li>
+        </ul>
+        <a href="https://drive.google.com/file/d/1MWu1I8rgd9hQU0s0a8LWXYqXe7qHwwWd/view?usp=drive_linkf" download class="btn-download"><i class="fas fa-download"></i> Download Resume</a>
+    </nav>
+
+    <section class="article-section section-padding">
+        
+        <div class="article-wrapper">
+
+            <a href="blog.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to All Posts</a>
+
+            <header class="article-header">
+                <h1 class="article-title">The Rise of **AI** in Rwanda 🇷🇼</h1>
+                <p class="article-excerpt">How local developers are leveraging machine learning to solve agricultural and urban challenges across the country.</p>
+                <div class="article-meta">
+                    <span><i class="fas fa-calendar"></i> Nov 15, 2025</span>
+                    <span><i class="fas fa-clock"></i> 3 min read</span>
+                    <span class="badge">AI</span>
+                </div>
+                <img src="https://i.pinimg.com/1200x/c9/2a/83/c92a83dd3ccb3d1319cc12f34343e782.jpg" alt="Featured image of AI and Robotics" class="featured-image">
+            </header>
+
+            <article class="glass-card article-body">
+                
+                <h2>Farming Meets Future: AI in Agriculture</h2>
+                <p>One of the most impactful applications of AI in Rwanda is in the agricultural sector. Developers are building models that analyze satellite imagery and weather patterns to predict crop yields and detect early signs of disease. This level of precision farming drastically reduces waste and boosts food security.</p>
+
+                <h3>The Core of the Predictive Model</h3>
+                <p>These models often rely on popular Python libraries like **TensorFlow** and **PyTorch**. The data pipeline involves cleaning large datasets of historical yield information, soil quality readings, and daily temperature logs.</p>
+
+                <div class="code-snippet glass-input">
+                    <pre><code># Simple pseudo-code for a predictive model setup
+import tensorflow as tf
+from sklearn.model_selection import train_test_split
+
+# Load and prepare data (X = features, y = yields)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+# Build a simple Neural Network
+model = tf.keras.Sequential([
+    tf.keras.layers.Dense(64, activation='relu', input_shape=(X_train.shape[1],)),
+    tf.keras.layers.Dense(1)
+])
+
+model.compile(optimizer='adam', loss='mse')</code></pre>
+                </div>
+                
+                <h2>AI in Urban Development</h2>
+                <p>Beyond farming, AI is enhancing efficiency in urban planning, from optimizing traffic light timing based on real-time flow to improving waste management routes. The focus is on creating smarter, more responsive cities.</p>
+
+                <h3>Opportunities for Local Developers</h3>
+                <p>The demand for talent in data science and machine learning is growing exponentially. Projects are not only fulfilling technical challenges but also generating tangible, positive social and economic change locally.</p>
+                
+            </article>
+
+            <div class="glass-card author-info">
+                <img src="https://i.pinimg.com/736x/03/eb/d6/03ebd625cc0b9d636256ecc44c0ea324.jpg" alt="Author Avatar" class="author-avatar">
+                <div>
+                    <h4>Written by Keza Kevin</h4>
+                    <p>Passionate Web Developer specializing in creating visually stunning and highly optimized user interfaces.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Keza Kevin. <a href="blog.html">Back to Blog</a></p>
+    </footer>
+</body>
+</html>

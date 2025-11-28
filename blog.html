@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Keza Kevin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="glass-nav">
+        <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="#" class="active">My Blog</a></li>
+            <li><a href="index.html#contact">Connect</a></li>
+        </ul>
+        <a href="images/cv.pdf" download class="btn-download"><i class="fas fa-download"></i> Download Resume</a>
+    </nav>
+
+    <section class="blog-header section-padding">
+        <h1>Tech Insights & <span class="highlight">Stories</span></h1>
+        <p>Thoughts on Web Development, AI, and Future Tech.</p>
+        
+        <div class="blog-controls glass-card">
+            <input type="text" id="searchInput" class="glass-input-search" placeholder="Search articles...">
+            <div class="categories">
+                <button class="cat-btn active" onclick="filterBlog('all')">All</button>
+                <button class="cat-btn" onclick="filterBlog('coding')">Coding</button>
+                <button class="cat-btn" onclick="filterBlog('design')">Design</button>
+                <button class="cat-btn" onclick="filterBlog('ai')">AI</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="blog-grid" id="blogGrid">
+            
+            <article class="glass-card blog-card" data-category="coding">
+                <div class="blog-img">
+                    <img src="https://i.pinimg.com/1200x/5f/f2/8c/5ff28c537d7a58c1b287331ed0dee304.jpg" alt="Coding"> <span class="badge">Frontend</span>
+                </div>
+                <div class="blog-content">
+                    <div class="meta">Nov 28, 2025 • 5 min read</div>
+                    <h3>Mastering CSS Grid in 2025</h3>
+                    <p>Why flexbox isn't enough anymore and how glassmorphism relies on modern grid layouts.</p>
+                    <a href="article-css-grid.html" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="glass-card blog-card" data-category="ai">
+                <div class="blog-img">
+                    <img src="https://i.pinimg.com/1200x/c9/2a/83/c92a83dd3ccb3d1319cc12f34343e782.jpg" alt="AI">
+                    <span class="badge">AI</span>
+                </div>
+                <div class="blog-content">
+                    <div class="meta">Nov 15, 2025 • 3 min read</div>
+                    <h3>The Rise of AI in Rwanda</h3>
+                    <p>How local developers are leveraging machine learning to solve agricultural challenges.</p>
+                    <a href="article-ai-rwanda.html" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="glass-card blog-card" data-category="design">
+                <div class="blog-img">
+                    <img src="https://i.pinimg.com/736x/b4/4d/60/b44d603847bd7cbfd3313499c4cb73ed.jpg" alt="Design">
+                    <span class="badge">UI/UX</span>
+                </div>
+                <div class="blog-content">
+                    <div class="meta">Oct 30, 2025 • 6 min read</div>
+                    <h3>Dark Mode Design Principles</h3>
+                    <p>Creating depth with shadows and lighting without using pure black backgrounds.</p>
+                    <a href="article-dark-mode.html" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Keza Kevin. <a href="index.html">Back to Portfolio</a></p>
+    </footer>
+
+    <script>
+        function filterBlog(category) {
+            const cards = document.querySelectorAll('.blog-card');
+            const btns = document.querySelectorAll('.cat-btn');
+            
+            // Update active button style
+            btns.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter logic
+            cards.forEach(card => {
+                if(category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Simple Search Logic
+        document.getElementById('searchInput').addEventListener('keyup', function(e) {
+            const term = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.blog-card');
+
+            cards.forEach(card => {
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                const text = card.querySelector('p').innerText.toLowerCase();
+                
+                if(title.includes(term) || text.includes(term)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

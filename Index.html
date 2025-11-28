@@ -1,197 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Keza Kevin Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keza Kevin | Web Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navigation -->
-  <header class="navbar">
-    <div class="logo">KEZA</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#blog">My Blog</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+
+    <nav class="glass-nav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Connect</a></li>
+            <li><a href="blog.html">My Blog</a></li> 
+        </ul>
+        
+        <button id="mode-toggle" class="btn-icon mode-toggle-btn" aria-label="Toggle dark/light mode">
+            <i class="fas fa-sun"></i> 
+        </button>
+
+        <a href="https://drive.google.com/file/d/1MWu1I8rgd9hQU0s0a8LWXYqXe7qHwwWd/view?usp=drive_link" class="btn-download"><i class="fas fa-download"></i> Download Resume</a>
     </nav>
-    <a href="https://drive.google.com/file/d/1MWu1I8rgd9hQU0s0a8LWXYqXe7qHwwWd/view?usp=drive_link" class="btn btn-outline">Download Resume</a>
-  </header>
 
-  <!-- Hero Section -->
-  <section id="hero" class="hero">
-    <div class="hero-left">
-      <h1>Hello, I am <span class="highlight">Keza Kevin</span></h1>
-      <h2>WEB DEVELOPER</h2>
-      <p>Building the web, one pixel and line at a time.</p>
-      <div class="hero-actions">
-        <a href="mailto:kezadushime@gmail.com" class="btn btn-primary">Hire Me</a>
-        <a href="#contact" class="btn btn-outline">Email</a>
-      </div>
-    </div>
-    <div class="hero-right">
-      <img src="img/hero.jpg" alt="Keza Kevin" class="hero-img" />
-    </div>
-  </section>
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <p class="greeting">Hello, I am <strong>Keza Kevin</strong></p>
+            <h1>WEB DEVELOPER</h1>
+            <p class="tagline">Building the web, one pixel and line at a time.</p>
+            
+            <div class="cta-group">
+                <a href="#contact" class="btn-primary">Hire me</a>
+                <a href="mailto:Kezadushime@gmail.com" class="btn-icon"><i class="fas fa-envelope"></i></a>
+            </div>
 
-  <!-- About Section -->
-  <section id="about" class="section">
-    <h2 class="section-title">About Me</h2>
-    <div class="about-content">
-      <img src="img/about.jpg" alt="About Robot" class="section-img" />
-      <p>
-        I’m Keza Kevin, a Kigali-based developer passionate about responsive websites and assistive tech solutions.
-        I blend robotics with web platforms to create impactful, human-centered experiences.
-      </p>
-    </div>
-  </section>
+            <div class="glass-card testimonial-float">
+                <i class="fas fa-quote-left"></i>
+                <p>"Thank you for sharing your work - the site is impressive and easy to navigate."</p>
+                <div class="user-profile">
+                    <img src="" alt="Sophia">
+                    <div>
+                        <h4>Sophia Williams</h4>
+                        <span>Business Owner</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-  <!-- Skills Section -->
-  <section id="skills" class="section">
-    <h2 class="section-title">Skills</h2>
-    <div class="skills-content">
-      <img src="img/skills.jpg" alt="Skills Robot" class="section-img" />
-      <div>
-        <p>I specialize in modern web development with HTML, CSS, JavaScript, React, Node.js, Python, Figma, and IoT.</p>
-        <ul class="skills-list">
-          <li class="skill-chip">HTML</li>
-          <li class="skill-chip">CSS</li>
-          <li class="skill-chip">JavaScript</li>
-          <li class="skill-chip">React</li>
-          <li class="skill-chip">Node.js</li>
-          <li class="skill-chip">Python</li>
-          <li class="skill-chip">Figma</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+        <div class="hero-image">
+            
+            <img src="https://i.pinimg.com/736x/aa/4b/9c/aa4b9c0b9b8e927ff1a0fe53548d7c93.jpg" class="main-avatar" alt="Keza Kevin Avatar">
+            <div class="tech-icon icon-html"><i class="fab fa-html5"></i></div>
+            <div class="tech-icon icon-css"><i class="fab fa-css3-alt"></i></div>
+            <div class="tech-icon icon-js"><i class="fab fa-js"></i></div>
+            <div class="tech-icon icon-figma"><i class="fab fa-figma"></i></div>
+        </div>
+    </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="section projects-section">
-    <h2 class="section-title">My Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3>Automation & Robotics</h3>
-        <ul>
-          <li>IoT Health Monitor</li>
-          <li>Smart Agriculture System</li>
-          <li>Voice-Controlled Robot Assistant</li>
-        </ul>
-      </div>
-      <div class="project-card">
-        <h3>Graphic Design / UI/UX</h3>
-        <ul>
-          <li>Brand Identity Kit</li>
-          <li>Interactive Figma Prototype</li>
-          <li>Infographic Series</li>
-        </ul>
-      </div>
-      <div class="project-card">
-        <h3>Web Development</h3>
-        <ul>
-          <li>Community Hub Website</li>
-          <li>E-commerce Demo</li>
-          <li>Portfolio Builder Tool</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    <section id="projects" class="section-padding">
+        <h2 class="section-title">My Projects</h2>
+        
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="robotics">Robotics</button>
+            <button class="filter-btn" data-filter="design">Design</button>
+            <button class="filter-btn" data-filter="web">Web Dev</button>
+        </div>
 
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="testimonials-section">
-    <h2>What People Say</h2>
-    <div class="testimonials-list">
-      <div class="testimonial-card">
-        <p>"Kevin’s portfolio is clean, modern, and easy to navigate."</p>
-        <h4>- Sophia Williams</h4>
-      </div>
-      <div class="testimonial-card">
-        <p>"His ability to blend robotics with web platforms is inspiring."</p>
-        <h4>- John M.</h4>
-      </div>
-    </div>
-  </section>
+        <div class="projects-grid">
+            <div class="glass-card project-card" data-category="robotics">
+                <img src="https://i.pinimg.com/736x/3a/9b/d2/3a9bd2479c0cb157f1186e781edfcb85.jpg" alt="Robotics">
+                <div class="project-info">
+                    <h3>Automation & Robotics</h3>
+                    <ul>
+                        <li>IoT Health Monitor</li>
+                        <li>Smart Agriculture System</li>
+                        <li>Voice-Controlled Robot</li>
+                    </ul>
+                    <a href="#" class="btn-glass">View more</a>
+                </div>
+            </div>
 
-  <!-- Blog Section -->
-  <section id="blog" class="section blog-section">
-    <h2 class="section-title">My Blog</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3>AI in Web Development</h3>
-        <p>Discover how AI tools like Copilot and ChatGPT are transforming how we build and design websites.</p>
-      </div>
-      <div class="project-card">
-        <h3>Graphic Design Trends 2025</h3>
-        <p>Minimalist dark themes, 3D typography, and AI-assisted design are reshaping the creative industry.</p>
-      </div>
-    </div>
-  </section>
+            <div class="glass-card project-card" data-category="design">
+                <img src="https://i.pinimg.com/736x/e1/2a/31/e12a313ae5262c8f8170a9a631e333b0.jpg" alt="Design">
+                <div class="project-info">
+                    <h3>Graphic Design / UI/UX</h3>
+                    <ul>
+                        <li>Brand Identity Kit</li>
+                        <li>Interactive Figma Prototype</li>
+                        <li>Infographic Series</li>
+                    </ul>
+                    <a href="#" class="btn-glass">View more</a>
+                </div>
+            </div>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section">
-    <h2 class="section-title">Contact Me</h2>
-    <div class="contact-container">
-      <div class="contact-info">
-        <p><strong>Phone:</strong> +250 734 564 463</p>
-        <p><strong>Email:</strong> Kezadushime@gmail.com</p>
-        <p><strong>Location:</strong> Kigali, Rwanda</p>
-      </div>
-      <form class="contact-form" action="mailto:kezadushime@gmail.com" method="POST" enctype="text/plain">
-        <input type="text" name="Name" placeholder="Name" required>
-        <input type="email" name="Email" placeholder="Email" required>
-        <input type="text" name="Subject" placeholder="Subject" required>
-        <textarea name="Message" placeholder="Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-  </section>
+            <div class="glass-card project-card" data-category="web">
+                <img src="https://i.pinimg.com/1200x/bc/a8/73/bca873cf91377ef59d1e0bb0369b7d98.jpg" alt="Web Dev">
+                <div class="project-info">
+                    <h3>Web Development</h3>
+                    <ul>
+                        <li>Community Hub Website</li>
+                        <li>E-commerce Demo</li>
+                        <li>Portfolio Builder Tool</li>
+                    </ul>
+                    <a href="#" class="btn-glass">View more</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Chatbox Section -->
-  <section id="chatbox" class="chatbox-section">
-    <h2>Ask My AI Assistant</h2>
-    <div class="chat-container">
-      <div id="chat-log" class="chat-log"></div>
-      <input type="text" id="chat-input" placeholder="Type your question..." />
-      <button onclick="sendMessage()">Send</button>
-    </div>
-  </section>
+    <section id="experience" class="section-padding">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2023 - Present</div>
+                <div class="timeline-content glass-card">
+                    <h3>Senior Web Developer</h3>
+                    <p>Leading frontend development for e-commerce platforms using React and Node.js.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2021 - 2023</div>
+                <div class="timeline-content glass-card">
+                    <h3>UI/UX Designer</h3>
+                    <p>Designed user interfaces for fintech mobile applications at TechSolutions Rwanda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <p>&copy; 2025 Kevin Iyaremye Dushime Keza — Thanks for visiting my page!</p>
-    </div>
-  </footer>
+    <section id="ai-recommender" class="section-padding ai-section">
+        <div class="glass-card ai-container">
+            <h2><i class="fas fa-robot"></i> AI Project Recommender</h2>
+            <p>Not sure what to look at? Let my AI assistant suggest a project based on your role.</p>
+            <select id="user-role" class="glass-input">
+                <option value="" disabled selected>Select your role...</option>
+                <option value="developer">I am a Developer</option>
+                <option value="designer">I am a Designer</option>
+                <option value="business">I am a Business Owner</option>
+            </select>
+            <button onclick="recommendProject()" class="btn-primary">Ask AI</button>
+            <div id="ai-result" class="ai-output"></div>
+        </div>
+    </section>
 
-  <!-- JavaScript -->
-  <script>
-    function sendMessage() {
-      const input = document.getElementById('chat-input');
-      const log = document.getElementById('chat-log');
-      const userMessage = input.value.trim();
-      if (!userMessage) return;
+    <section id="contact" class="section-padding contact-section">
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <div class="glass-pill">Connect with Us</div>
+                
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <span>Phone</span>
+                        <p>+250 734 564 463</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <span>Email</span>
+                        <p>Kezadushime@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <span>Location</span>
+                        <p>Kigali, Rwanda</p>
+                    </div>
+                </div>
 
-      log.innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
-      input.value = '';
+                <img src="c:\Users\KEVIN\Downloads\ad92634aa66aba338a86e4f7917ad42a.jpg" class="contact-avatar" alt="Contact Support">
+            </div>
 
-      setTimeout(() => {
-        log.innerHTML += `<p><strong>AI:</strong> Thanks for your message, Kevin! I'm here to help with web tips.</p>`;
-        log.scrollTop = log.scrollHeight;
-      }, 1000);
-    }
+            <form class="glass-card contact-form" id="contactForm">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="glass-input" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="glass-input" required>
+                </div>
+                <div class="form-group">
+                    <label>Subject</label>
+                    <input type="text" class="glass-input">
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea class="glass-input" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+        </div>
+    </section>
 
-    const modeSwitch = document.getElementById('modeSwitch');
-    if(modeSwitch){
-      modeSwitch.addEventListener('change', () => {
-        document.body.classList.toggle('light-mode');
-      });
-    }
-  </script>
+    <footer>
+        <p>&copy; 2025 Keza Kevin. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

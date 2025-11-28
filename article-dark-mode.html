@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Design Principles | Keza Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="glass-nav">
+        <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="blog.html">My Blog</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#contact">Connect</a></li>
+        </ul>
+        <a href="images/cv.pdf" download class="btn-download"><i class="fas fa-download"></i> Download Resume</a>
+    </nav>
+
+    <section class="article-section section-padding">
+        
+        <div class="article-wrapper">
+
+            <a href="blog.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to All Posts</a>
+
+            <header class="article-header">
+                <h1 class="article-title">Dark Mode Design **Principles**</h1>
+                <p class="article-excerpt">Creating depth with shadows and lighting without using pure black backgrounds for a truly comfortable user experience.</p>
+                <div class="article-meta">
+                    <span><i class="fas fa-calendar"></i> Oct 30, 2025</span>
+                    <span><i class="fas fa-clock"></i> 6 min read</span>
+                    <span class="badge">UI/UX</span>
+                </div>
+                <img src="images/project-2.png" alt="Featured image of Dark Mode Design" class="featured-image">
+            </header>
+
+            <article class="glass-card article-body">
+                
+                <h2>Beyond Pure Black: Why Dark Grey Matters</h2>
+                <p>A common misconception in dark mode design is to use pure black (`#000000`) for backgrounds. While it saves battery on OLED screens, it can also create a stark contrast with lighter elements, causing eye strain. Instead, using a **dark grey or deep indigo** provides a softer visual and allows for better depth perception.</p>
+
+                <h3>Layering for Depth</h3>
+                <p>Just like in your glassmorphism design, layering is key. Different shades of dark grey can indicate elevation and hierarchy. Lighter dark shades appear to float higher, while darker ones recede.</p>
+
+                <div class="code-snippet glass-input">
+                    <pre><code>:root {
+    --dark-surface-0: #121212; /* Base background */
+    --dark-surface-1: #1E1E1E; /* Raised cards */
+    --dark-surface-2: #2C2C2C; /* Dialogs, modals */
+}
+
+/* Example of a raised card in dark mode */
+.glass-card {
+    background-color: var(--dark-surface-1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+}</code></pre>
+                </div>
+                
+                <h2>Color Theory in Dark Interfaces</h2>
+                <p>When adapting your brand colors to dark mode, avoid oversaturated hues. These can appear vibrant on light backgrounds but can become jarring on dark ones. Opt for **desaturated versions** of your primary colors or lighter, more muted tones.</p>
+
+                <h3>Accessibility Considerations</h3>
+                <p>Always ensure sufficient contrast between text and background. Tools like WebAIM Contrast Checker can help you meet accessibility standards (WCAG 2.1). Prioritize readability, especially for long-form content.</p>
+                
+            </article>
+
+            <div class="glass-card author-info">
+                <img src="https://via.placeholder.com/60" alt="Author Avatar" class="author-avatar">
+                <div>
+                    <h4>Written by Keza Kevin</h4>
+                    <p>Passionate Web Developer specializing in creating visually stunning and highly optimized user interfaces.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Keza Kevin. <a href="blog.html">Back to Blog</a></p>
+    </footer>
+</body>
+</html>
