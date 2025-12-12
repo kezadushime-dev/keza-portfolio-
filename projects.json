@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "IoT Health Monitor",
+        "description": "A full-stack application monitoring remote patient health data, built with Node.js and MongoDB.",
+        "category": "robotics",
+        "tags": ["Node.js", "MongoDB", "IoT", "Full Stack"],
+        "image": "path/to/image1.jpg",
+        "link": "https://github.com/yourname/iot-monitor"
+    },
+    {
+        "id": 2,
+        "title": "Brand Identity Kit",
+        "description": "Comprehensive design system and style guide for a fictional luxury startup. Focus on UX/UI.",
+        "category": "design",
+        "tags": ["Figma", "Branding", "UI/UX", "Typography"],
+        "image": "path/to/image2.jpg",
+        "link": "https://behance.net/yourname/brand-kit"
+    },
+    {
+        "id": 3,
+        "title": "E-commerce Demo",
+        "description": "A performance-optimized e-commerce front-end built with React, focusing on conversion rates.",
+        "category": "web",
+        "tags": ["React", "JavaScript", "Front-end", "Performance"],
+        "image": "path/to/image3.jpg",
+        "link": "https://live-demo.com/ecommerce"
+    },
+    {
+        "id": 4,
+        "title": "Market Analysis Dashboard",
+        "description": "Interactive data visualization tool for tracking stock market trends and volatility.",
+        "category": "business",
+        "tags": ["Python", "Pandas", "D3.js", "Data Viz"],
+        "image": "path/to/image4.jpg",
+        "link": "https://tableau.com/dashboard/market-analysis"
+    }
+]

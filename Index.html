@@ -14,8 +14,8 @@
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#contact">Connect</a></li>
             <li><a href="blog.html">My Blog</a></li> 
@@ -25,7 +25,7 @@
             <i class="fas fa-sun"></i> 
         </button>
 
-        <a href="https://drive.google.com/file/d/1MWu1I8rgd9hQU0s0a8LWXYqXe7qHwwWd/view?usp=drive_link" class="btn-download"><i class="fas fa-download"></i> Download Resume</a>
+        <a href="images/cv.pdf" download class="btn-download"><i class="fas fa-download"></i> Download Resume</a>
     </nav>
 
     <section id="home" class="hero-section">
@@ -43,7 +43,7 @@
                 <i class="fas fa-quote-left"></i>
                 <p>"Thank you for sharing your work - the site is impressive and easy to navigate."</p>
                 <div class="user-profile">
-                    <img src="" alt="Sophia">
+                    <img src="https://via.placeholder.com/40" alt="Sophia">
                     <div>
                         <h4>Sophia Williams</h4>
                         <span>Business Owner</span>
@@ -53,7 +53,6 @@
         </div>
 
         <div class="hero-image">
-            
             <img src="https://i.pinimg.com/736x/aa/4b/9c/aa4b9c0b9b8e927ff1a0fe53548d7c93.jpg" class="main-avatar" alt="Keza Kevin Avatar">
             <div class="tech-icon icon-html"><i class="fab fa-html5"></i></div>
             <div class="tech-icon icon-css"><i class="fab fa-css3-alt"></i></div>
@@ -62,9 +61,62 @@
         </div>
     </section>
 
+    <section id="about" class="section-padding">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content glass-card">
+            <p>Hello! I'm **Keza Kevin**, a passionate Web Developer based in **Kigali, Rwanda**, with a focus on building engaging, user-centric, and scalable digital experiences.</p>
+            <p>My journey in tech began with a deep curiosity about how things work on the internet, which quickly evolved into a drive to create them. I specialize in the full stack, bridging the gap between cutting-edge **UI/UX design** and robust **backend logic**.</p>
+            <p>I thrive in environments that value continuous learning and collaboration. When I'm not coding, you can find me exploring new design tools or contributing to open-source projects. My goal is to transform complex challenges into beautiful, simple, and efficient solutions.</p>
+            
+            <div class="about-details">
+                <p><strong>Years of Experience:</strong> 4+</p>
+                <p><strong>Focus:</strong> Full-Stack Development & UI/UX</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section-padding">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            
+            <div class="glass-card skill-category">
+                <h3><i class="fas fa-code"></i> Frontend</h3>
+                <ul>
+                    <li>**HTML5** & **CSS3** (Sass, LESS)</li>
+                    <li>**JavaScript (ES6+)**</li>
+                    <li>**React** & Redux</li>
+                    <li>Responsive Design & Accessibility</li>
+                </ul>
+            </div>
+            
+            <div class="glass-card skill-category">
+                <h3><i class="fas fa-server"></i> Backend</h3>
+                <ul>
+                    <li>**Node.js** & **Express**</li>
+                    <li>Python & Flask/Django</li>
+                    <li>RESTful API Design</li>
+                    <li>Database Management (MongoDB, PostgreSQL)</li>
+                </ul>
+            </div>
+            
+            <div class="glass-card skill-category">
+                <h3><i class="fas fa-palette"></i> Design & Tools</h3>
+                <ul>
+                    <li>**Figma** & Adobe XD</li>
+                    <li>Git & GitHub/GitLab</li>
+                    <li>AWS / Netlify / Vercel</li>
+                    <li>Agile/Scrum Methodology</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
     <section id="projects" class="section-padding">
-        <h2 class="section-title">My Projects</h2>
-        
+        <div class="section-header-row">
+            <h2 class="section-title">My Projects</h2>
+            <button id="addProjectBtn" class="btn-primary btn-icon"><i class="fas fa-plus"></i> Add Project</button>
+        </div>
         <div class="filter-container">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="robotics">Robotics</button>
@@ -72,9 +124,49 @@
             <button class="filter-btn" data-filter="web">Web Dev</button>
         </div>
 
-        <div class="projects-grid">
+        <div class="projects-grid portfolio-grid">
+            
+            <div class="glass-card project-card" data-category="web">
+                <img src="https://i.pinimg.com/736x/46/1e/81/461e8129c506080a259e0fbc46d0a2d9.jpg" alt="Visit Rwanda Tourism Portal">
+                <div class="project-info">
+                    <h3>Visit Rwanda Tourism Portal</h3>
+                    <ul>
+                        <li>Interactive Booking & Payments</li>
+                        <li>Dynamic Destination Exploration</li>
+                        <li>Full-Stack Development</li>
+                    </ul>
+                    <a href="https://visitrwanda360.netlify.app/" class="btn-glass">View Project</a>
+                </div>
+            </div>
+
+            <div class="glass-card project-card" data-category="web">
+                <img src="https://i.pinimg.com/1200x/5c/4f/02/5c4f0214fbe0d063dd4ff3a84610da9a.jpg" alt="Personal Finance Tracker">
+                <div class="project-info">
+                    <h3>Personal Finance Tracker</h3>
+                    <ul>
+                        <li>Expense Tracking & Categorization</li>
+                        <li>Budgeting & Reporting</li>
+                        <li>React & Data Visualization</li>
+                    </ul>
+                    <a href="http://127.0.0.1:5500/welcome.html" class="btn-glass">View Project</a>
+                </div>
+            </div>
+
+            <div class="glass-card project-card" data-category="web">
+                <img src="https://i.pinimg.com/736x/55/7c/64/557c64034ecc52a10522dd77a80c8700.jpg" alt="Interactive E-learning Platform">
+                <div class="project-info">
+                    <h3>Interactive E-learning Platform</h3>
+                    <ul>
+                        <li>User Auth & Progress Tracking</li>
+                        <li>Video Hosting & Quiz Modules</li>
+                        <li>React/Express Full Stack</li>
+                    </ul>
+                    <a href="https://elearning-demo.com" class="btn-glass">View Project</a>
+                </div>
+            </div>
+
             <div class="glass-card project-card" data-category="robotics">
-                <img src="https://i.pinimg.com/736x/3a/9b/d2/3a9bd2479c0cb157f1186e781edfcb85.jpg" alt="Robotics">
+                <img src="https://i.pinimg.com/736x/3a/9b/d2/3a9bd2479c0cb157f1186e781edfcb85.jpg" alt="Automation & Robotics">
                 <div class="project-info">
                     <h3>Automation & Robotics</h3>
                     <ul>
@@ -87,7 +179,7 @@
             </div>
 
             <div class="glass-card project-card" data-category="design">
-                <img src="https://i.pinimg.com/736x/e1/2a/31/e12a313ae5262c8f8170a9a631e333b0.jpg" alt="Design">
+                <img src="https://i.pinimg.com/736x/e1/2a/31/e12a313ae5262c8f8170a9a631e333b0.jpg" alt="Graphic Design / UI/UX">
                 <div class="project-info">
                     <h3>Graphic Design / UI/UX</h3>
                     <ul>
@@ -100,7 +192,7 @@
             </div>
 
             <div class="glass-card project-card" data-category="web">
-                <img src="https://i.pinimg.com/1200x/bc/a8/73/bca873cf91377ef59d1e0bb0369b7d98.jpg" alt="Web Dev">
+                <img src="https://i.pinimg.com/1200x/bc/a8/73/bca873cf91377ef59d1e0bb0369b7d98.jpg" alt="Web Development">
                 <div class="project-info">
                     <h3>Web Development</h3>
                     <ul>
@@ -178,25 +270,25 @@
                     </div>
                 </div>
 
-                <img src="c:\Users\KEVIN\Downloads\ad92634aa66aba338a86e4f7917ad42a.jpg" class="contact-avatar" alt="Contact Support">
+                <img src="https://i.pinimg.com/1200x/ff/2d/bb/ff2dbb4ec56ba8bdb13aaf26c44463b2.jpg" class="contact-avatar" alt="Contact Support">
             </div>
 
             <form class="glass-card contact-form" id="contactForm">
                 <div class="form-group">
                     <label>Name</label>
-                    <input type="text" class="glass-input" required>
+                    <input type="text" name="name" class="glass-input" required>
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" class="glass-input" required>
+                    <input type="email" name="email" class="glass-input" required>
                 </div>
                 <div class="form-group">
                     <label>Subject</label>
-                    <input type="text" class="glass-input">
+                    <input type="text" name="subject" class="glass-input">
                 </div>
                 <div class="form-group">
                     <label>Message</label>
-                    <textarea class="glass-input" rows="4" required></textarea>
+                    <textarea class="glass-input" name="message" rows="4" required></textarea>
                 </div>
                 <button type="submit" class="btn-submit">Send Message</button>
             </form>
@@ -207,6 +299,44 @@
         <p>&copy; 2025 Keza Kevin. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <div id="projectModal" class="modal">
+        <div class="modal-content glass-card">
+            <span class="close-button">&times;</span>
+            <h3>Add New Portfolio Project</h3>
+            <form id="newProjectForm">
+                <div class="form-group">
+                    <label for="projectTitle">Project Title*</label>
+                    <input type="text" id="projectTitle" name="projectTitle" class="glass-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="projectDescription">Short Description*</label>
+                    <textarea id="projectDescription" name="projectDescription" class="glass-input" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="projectCategory">Category*</label>
+                    <select id="projectCategory" name="projectCategory" class="glass-input" required>
+                        <option value="web">Web Dev</option>
+                        <option value="design">Design</option>
+                        <option value="robotics">Robotics</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="projectTags">Tags (Comma-separated)</label>
+                    <input type="text" id="projectTags" name="projectTags" class="glass-input" placeholder="e.g., React, API, CSS">
+                </div>
+                <div class="form-group">
+                    <label for="projectImageLink">Image URL (Optional)</label>
+                    <input type="url" id="projectImageLink" name="projectImageLink" class="glass-input" placeholder="https://example.com/image.jpg">
+                </div>
+                 <div class="form-group">
+                    <label for="projectLink">Project Link (Live or GitHub)</label>
+                    <input type="url" id="projectLink" name="projectLink" class="glass-input" placeholder="https://github.com/...">
+                </div>
+                <p class="note">Note: For persistent storage, the JavaScript must be configured to save this to a database like Firebase.</p>
+                <button type="submit" class="btn-primary">Add to Portfolio</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script> 
 </body>
 </html>

@@ -111,8 +111,8 @@
     --text-white: #ffffff;
     --text-grey: #b0b0d0;
     --font-serif: 'Playfair Display', serif;
-    --font-sans: 'Poppins', sans-serif;
-}
+    --font-sans: 'Poppins', sans-serif;}
+
 
 * {
     margin: 0;
@@ -703,7 +703,179 @@ body {
 .author-info p {
     color: var(--text-grey);
 }
+/* --- ABOUT SECTION STYLES --- */
+
+#about .about-content {
+    /* Inherits glass-card styles */
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+#about .about-content p strong {
+    color: var(--color-primary); /* Highlight key names/tech */
+    font-weight: 600;
+}
+
+#about .about-details {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+#about .about-details p {
+    margin: 0;
+    text-align: center;
+}
+
+#about .about-details strong {
+    display: block;
+    font-size: 1.1em;
+}
+
+
+/* --- SKILLS SECTION STYLES --- */
+
+#skills .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-category {
+    padding: 30px;
+    text-align: left;
+    transition: transform 0.3s ease;
+    border-left: 5px solid var(--color-primary); /* Add visual distinction */
+}
+
+.skill-category:hover {
+    transform: translateY(-5px); /* Subtle lift effect */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+.skill-category h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--color-light); 
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+}
+
+.skill-category h3 i {
+    color: var(--color-primary);
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-category li {
+    padding: 8px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.05); /* Very light separator */
+    color: var(--color-text-faded);
+    font-weight: 300;
+}
+
+.skill-category li:last-child {
+    border-bottom: none;
+}
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 768px) {
+    #about .about-details {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
 /* --- AI Feature --- */
 .ai-section { text-align: center; }
 .ai-container { max-width: 600px; margin: 0 auto; }
 .ai-output { margin-top: 20px; color: var(--neon-cyan); font-weight: bold; min-height: 20px;}
+/* Projects Section Header */
+.section-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Modal Base */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.7); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%; 
+    max-width: 500px; /* Adjust size as needed */
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.modal-content .form-group {
+    margin-bottom: 15px;
+}
+.modal-content .glass-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.modal-content .btn-primary {
+    margin-top: 15px;
+    width: 100%;
+}
+.modal-content .note {
+    font-size: 0.8rem;
+    color: #888;
+    text-align: center;
+    margin-top: 10px;
+}
