@@ -1,12 +1,25 @@
 [
     {
+        "id": "project-001",
+        "title": "Smart Blind Stick",
+        "category": "robotics",
+        "description": "IoT & Embedded Systems, Real-time Obstacle Detection, Integrated GPS & Emergency Call",
+        "tags": ["IoT", "Embedded", "Robotics"],
+        "image": "https://i.pinimg.com/736x/9b/95/a6/9b95a63fc8bb2bfab6835a312bc89c43.jpg",
+        "link": "#",
+        "videoLink": "https://youtu.be/FdAKSRsonU4", 
+        "presentationLink": "https://www.canva.com/design/DAG4VW9uWuA/mvr94KVfg2PvX0TDs1mnvQ/edit?utm_content=DAG4VW9uWuA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+    },
+    {
         "id": 1,
         "title": "IoT Health Monitor",
         "description": "A full-stack application monitoring remote patient health data, built with Node.js and MongoDB.",
         "category": "robotics",
         "tags": ["Node.js", "MongoDB", "IoT", "Full Stack"],
-        "image": "path/to/image1.jpg",
-        "link": "https://github.com/yourname/iot-monitor"
+        "image": "https://i.pinimg.com/736x/52/f8/99/52f89919a167c37f8f001d560f5ff5ab.jpg",
+        "link": "https://github.com/yourname/iot-monitor",
+        "videoLink": null,
+        "presentationLink": null
     },
     {
         "id": 2,
@@ -14,8 +27,10 @@
         "description": "Comprehensive design system and style guide for a fictional luxury startup. Focus on UX/UI.",
         "category": "design",
         "tags": ["Figma", "Branding", "UI/UX", "Typography"],
-        "image": "path/to/image2.jpg",
-        "link": "https://behance.net/yourname/brand-kit"
+        "image": "https://i.pinimg.com/1200x/d4/84/26/d484268e95618b12770b217802b16dd3.jpg",
+        "link": "https://behance.net/yourname/brand-kit",
+        "videoLink": null,
+        "presentationLink": null
     },
     {
         "id": 3,
@@ -23,8 +38,10 @@
         "description": "A performance-optimized e-commerce front-end built with React, focusing on conversion rates.",
         "category": "web",
         "tags": ["React", "JavaScript", "Front-end", "Performance"],
-        "image": "path/to/image3.jpg",
-        "link": "https://live-demo.com/ecommerce"
+        "image": "https://i.pinimg.com/1200x/8e/7f/c7/8e7fc704c70d51c97ad92927e224f060.jpg",
+        "link": "https://live-demo.com/ecommerce",
+        "videoLink": null,
+        "presentationLink": null
     },
     {
         "id": 4,
@@ -32,7 +49,9 @@
         "description": "Interactive data visualization tool for tracking stock market trends and volatility.",
         "category": "business",
         "tags": ["Python", "Pandas", "D3.js", "Data Viz"],
-        "image": "path/to/image4.jpg",
-        "link": "https://tableau.com/dashboard/market-analysis"
+        "image": "https://i.pinimg.com/1200x/f7/dc/b4/f7dcb46beb854e34b5c235f8055e0b56.jpg",
+        "link": "https://tableau.com/dashboard/market-analysis",
+        "videoLink": null,
+        "presentationLink": null
     }
 ]
