@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keza Kevin | Elevator Pitch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* ==================================
+           1. CORE CSS VARIABLES (Identical to main site)
+           ================================== */
+        :root {
+            /* Primary Theme Colors */
+            --color-primary: #00e5ff; /* Neon Cyan Accent */
+            --color-secondary: #ff0077;
+            --neon-cyan: #00e5ff; /* Main interactive accent */
+            
+            /* Background & Text */
+            --bg-dark: #0a0a0a;
+            --bg-gradient: linear-gradient(135deg, var(--bg-dark) 0%, #151515 100%);
+            --text-white: #e0e0e0;
+            --text-dark: #1a1a1a;
+            --color-text-faded: rgba(255, 255, 255, 0.6);
+
+            /* Glassmorphism Properties */
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: 1px solid rgba(255, 255, 255, 0.18);
+            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            --glass-shadow-hover: 0 12px 40px 0 rgba(0, 229, 255, 0.2);
+            
+            /* Fonts */
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Poppins', sans-serif;
+        }
+
+        /* ==================================
+           2. GLOBAL & RESET
+           ================================== */
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-white);
+            font-family: var(--font-sans);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        strong {
+            color: var(--neon-cyan);
+            font-weight: 600;
+        }
+
+        /* ==================================
+           3. GLASS UTILITIES
+           ================================== */
+        .glass-card {
+            background: var(--glass-bg);
+            border-radius: 15px;
+            border: var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--glass-shadow-hover);
+        }
+
+        /* ==================================
+           4. BUTTONS & NAVIGATION
+           ================================== */
+        .btn-primary {
+            background: var(--neon-cyan);
+            color: var(--text-dark);
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+        }
+        .btn-primary:hover {
+            background: #00b8cc; 
+            box-shadow: 0 0 25px var(--neon-cyan);
+        }
+
+        .btn-link {
+            color: var(--neon-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+        .btn-link:hover {
+            color: var(--color-secondary);
+            text-decoration: underline;
+        }
+
+        /* Back Button */
+        .back-btn {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background: var(--glass-bg);
+            border: 1px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px); 
+            -webkit-backdrop-filter: blur(8px);
+            font-size: 1rem;
+        }
+
+        .back-btn:hover {
+            background: var(--neon-cyan);
+            color: var(--bg-dark);
+            box-shadow: 0 0 15px var(--neon-cyan);
+        }
+
+        /* ==================================
+           5. PITCH PAGE LAYOUT & CONTENT
+           ================================== */
+        .pitch-container {
+            width: 90%;
+            max-width: 1200px; /* Increased max width for the grid */
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .header-pitch {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            margin-bottom: 5px;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.8), 0 0 30px rgba(0, 229, 255, 0.4); 
+            text-align: left; /* Aligns title to the left side of the grid */
+        }
+
+        .sub-header-pitch {
+            font-size: 1.5rem;
+            color: var(--color-text-faded);
+            margin-bottom: 40px;
+            font-weight: 300;
+            text-align: left; /* Aligns subtitle to the left side of the grid */
+        }
+        
+        /* NEW: Grid for Pitch Content and Image */
+        .pitch-grid {
+            display: grid;
+            grid-template-columns: 2fr 1.5fr; /* Pitch content slightly wider than the image */
+            gap: 40px;
+            align-items: flex-start; /* Aligns items to the top */
+            margin-bottom: 40px;
+        }
+
+        .pitch-content {
+            text-align: left;
+            animation: fadeIn 1s ease-out;
+            /* Remove margin-bottom since it's controlled by the grid gap */
+            margin-bottom: 0; 
+        }
+
+        .pitch-content p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        /* NEW: Image Container Styles */
+        .pitch-image-container {
+            background: var(--glass-bg);
+            border-radius: 15px;
+            border: var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            backdrop-filter: blur(8px); 
+            -webkit-backdrop-filter: blur(8px);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 350px; /* Ensures the pitch card and image container align */
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pitch-image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+        }
+
+        /* Stats and CTA bar (inside pitch-content) */
+        .pitch-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            padding: 20px 0;
+            border-top: 1px dashed rgba(255, 255, 255, 0.2);
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-item h4 {
+            color: var(--neon-cyan);
+            font-size: 3rem;
+            margin: 0;
+            font-family: var(--font-serif);
+        }
+
+        .stat-item p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--color-text-faded);
+        }
+
+        .cta-bar {
+            background: rgba(255, 255, 255, 0.08); 
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cta-bar p {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        /* ==================================
+           6. ANIMATIONS & RESPONSIVENESS
+           ================================== */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 992px) {
+            .pitch-grid {
+                grid-template-columns: 1fr; /* Stack on smaller screens */
+                gap: 30px;
+            }
+            .header-pitch, .sub-header-pitch {
+                text-align: center;
+            }
+            .pitch-image-container {
+                min-height: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-pitch {
+                font-size: 2.5rem;
+            }
+            .sub-header-pitch {
+                font-size: 1.2rem;
+            }
+            .back-btn {
+                top: 15px;
+                left: 15px;
+                padding: 8px 12px;
+            }
+            .pitch-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .cta-bar {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+
+    <div class="pitch-container">
+        
+        <h1 class="header-pitch">My Value Proposition</h1>
+        <p class="sub-header-pitch">Keza Kevin: The Bridge Between Design and Engineering</p>
+        
+        <div class="pitch-grid">
+            
+            <div class="glass-card pitch-content">
+                <p><strong>Are you looking for a Full-Stack Web Developer who not only codes but also deeply understands UX/UI design?</strong></p>
+                
+                <p>I am Keza Kevin, and for the past **4+ years**, I've specialized in transforming complex business needs into elegant, high-performing web applications using **React, Node.js, and modern RESTful APIs**. Based in Kigali, my focus is on delivering projects that are not just functional, but also provide a delightful and accessible user experience from the first click. I bridge the gap between aesthetics and engineering to ensure your digital product is both beautiful and scalable.</p>
+                
+                <p>My experience covers the entire development lifecycle, from initial wireframing in **Figma** to final deployment on platforms like **AWS**. This holistic approach ensures minimal friction between design concepts and the final implemented product, saving time and reducing costly rework.</p>
+
+                <div class="pitch-stats">
+                    <div class="stat-item">
+                        <h4>4+</h4>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>92%</h4>
+                        <p>Client Satisfaction</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>Kigali</h4>
+                        <p>Based in Rwanda</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pitch-image-container">
+                <h3>Scalability & Architecture</h3>
+                <img src="https://i.pinimg.com/736x/80/02/06/800206c592ffe136236234af04f1773c.jpg" alt="Abstract architectural diagram representing scalable web development" loading="lazy">
+                <p style="margin-top: 15px; color: var(--color-text-faded); font-size: 0.9em;">Visualizing robust, layered solutions.</p>
+            </div>
+        </div>
+        <div class="cta-bar pitch-grid-full-width">
+            <p>Ready to turn that complex vision into a scalable reality?</p>
+            <a href="index.html#contact" class="btn-primary">Let's Connect Now</a>
+        </div>
+        
+        <a href="index.html#portfolio" class="btn-link">View My Detailed Projects <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("Elevator Pitch page loaded with consistent theme and grid layout.");
+        });
+    </script>
+</body>
+</html>

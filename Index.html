@@ -6,303 +6,332 @@
     <title>Keza Kevin | Web Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
 
+    <section id="top-background-visual" class="top-bg-visual"></section>
+
     <nav class="glass-nav">
-        <ul>
+        <ul aria-label="Main Navigation Links">
             <li><a href="#home">Home</a></li>
+            <li><a href="pitch.html">Elevator Pitch</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#contact">Connect</a></li>
             <li><a href="blog.html">My Blog</a></li> 
         </ul>
         
-        <button id="mode-toggle" class="btn-icon mode-toggle-btn" aria-label="Toggle dark/light mode">
+        <button id="mode-toggle" class="btn-icon mode-toggle-btn" type="button" aria-label="Toggle dark/light mode">
             <i class="fas fa-sun"></i> 
         </button>
 
         <a href="images/cv.pdf" download class="btn-download"><i class="fas fa-download"></i> Download Resume</a>
     </nav>
 
-    <section id="home" class="hero-section">
-        <div class="hero-content">
-            <p class="greeting">Hello, I am <strong>Keza Kevin</strong></p>
-            <h1>WEB DEVELOPER</h1>
-            <p class="tagline">Building the web, one pixel and line at a time.</p>
-            
-            <div class="cta-group">
-                <a href="#contact" class="btn-primary">Hire me</a>
-                <a href="mailto:Kezadushime@gmail.com" class="btn-icon"><i class="fas fa-envelope"></i></a>
-            </div>
+    <main>
 
-            <div class="glass-card testimonial-float">
-                <i class="fas fa-quote-left"></i>
-                <p>"Thank you for sharing your work - the site is impressive and easy to navigate."</p>
-                <div class="user-profile">
-                    <img src="https://via.placeholder.com/40" alt="Sophia">
-                    <div>
-                        <h4>Sophia Williams</h4>
-                        <span>Business Owner</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="hero-image">
-            <img src="https://i.pinimg.com/736x/aa/4b/9c/aa4b9c0b9b8e927ff1a0fe53548d7c93.jpg" class="main-avatar" alt="Keza Kevin Avatar">
-            <div class="tech-icon icon-html"><i class="fab fa-html5"></i></div>
-            <div class="tech-icon icon-css"><i class="fab fa-css3-alt"></i></div>
-            <div class="tech-icon icon-js"><i class="fab fa-js"></i></div>
-            <div class="tech-icon icon-figma"><i class="fab fa-figma"></i></div>
-        </div>
-    </section>
-
-    <section id="about" class="section-padding">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content glass-card">
-            <p>Hello! I'm **Keza Kevin**, a passionate Web Developer based in **Kigali, Rwanda**, with a focus on building engaging, user-centric, and scalable digital experiences.</p>
-            <p>My journey in tech began with a deep curiosity about how things work on the internet, which quickly evolved into a drive to create them. I specialize in the full stack, bridging the gap between cutting-edge **UI/UX design** and robust **backend logic**.</p>
-            <p>I thrive in environments that value continuous learning and collaboration. When I'm not coding, you can find me exploring new design tools or contributing to open-source projects. My goal is to transform complex challenges into beautiful, simple, and efficient solutions.</p>
-            
-            <div class="about-details">
-                <p><strong>Years of Experience:</strong> 4+</p>
-                <p><strong>Focus:</strong> Full-Stack Development & UI/UX</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="section-padding">
-        <h2 class="section-title">Technical Skills</h2>
-        <div class="skills-grid">
-            
-            <div class="glass-card skill-category">
-                <h3><i class="fas fa-code"></i> Frontend</h3>
-                <ul>
-                    <li>**HTML5** & **CSS3** (Sass, LESS)</li>
-                    <li>**JavaScript (ES6+)**</li>
-                    <li>**React** & Redux</li>
-                    <li>Responsive Design & Accessibility</li>
-                </ul>
-            </div>
-            
-            <div class="glass-card skill-category">
-                <h3><i class="fas fa-server"></i> Backend</h3>
-                <ul>
-                    <li>**Node.js** & **Express**</li>
-                    <li>Python & Flask/Django</li>
-                    <li>RESTful API Design</li>
-                    <li>Database Management (MongoDB, PostgreSQL)</li>
-                </ul>
-            </div>
-            
-            <div class="glass-card skill-category">
-                <h3><i class="fas fa-palette"></i> Design & Tools</h3>
-                <ul>
-                    <li>**Figma** & Adobe XD</li>
-                    <li>Git & GitHub/GitLab</li>
-                    <li>AWS / Netlify / Vercel</li>
-                    <li>Agile/Scrum Methodology</li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="projects" class="section-padding">
-        <div class="section-header-row">
-            <h2 class="section-title">My Projects</h2>
-            <button id="addProjectBtn" class="btn-primary btn-icon"><i class="fas fa-plus"></i> Add Project</button>
-        </div>
-        <div class="filter-container">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="robotics">Robotics</button>
-            <button class="filter-btn" data-filter="design">Design</button>
-            <button class="filter-btn" data-filter="web">Web Dev</button>
-        </div>
-
-        <div class="projects-grid portfolio-grid">
-            
-            <div class="glass-card project-card" data-category="web">
-                <img src="https://i.pinimg.com/736x/46/1e/81/461e8129c506080a259e0fbc46d0a2d9.jpg" alt="Visit Rwanda Tourism Portal">
-                <div class="project-info">
-                    <h3>Visit Rwanda Tourism Portal</h3>
-                    <ul>
-                        <li>Interactive Booking & Payments</li>
-                        <li>Dynamic Destination Exploration</li>
-                        <li>Full-Stack Development</li>
-                    </ul>
-                    <a href="https://visitrwanda360.netlify.app/" class="btn-glass">View Project</a>
-                </div>
-            </div>
-
-            <div class="glass-card project-card" data-category="web">
-                <img src="https://i.pinimg.com/1200x/5c/4f/02/5c4f0214fbe0d063dd4ff3a84610da9a.jpg" alt="Personal Finance Tracker">
-                <div class="project-info">
-                    <h3>Personal Finance Tracker</h3>
-                    <ul>
-                        <li>Expense Tracking & Categorization</li>
-                        <li>Budgeting & Reporting</li>
-                        <li>React & Data Visualization</li>
-                    </ul>
-                    <a href="http://127.0.0.1:5500/welcome.html" class="btn-glass">View Project</a>
-                </div>
-            </div>
-
-            <div class="glass-card project-card" data-category="web">
-                <img src="https://i.pinimg.com/736x/55/7c/64/557c64034ecc52a10522dd77a80c8700.jpg" alt="Interactive E-learning Platform">
-                <div class="project-info">
-                    <h3>Interactive E-learning Platform</h3>
-                    <ul>
-                        <li>User Auth & Progress Tracking</li>
-                        <li>Video Hosting & Quiz Modules</li>
-                        <li>React/Express Full Stack</li>
-                    </ul>
-                    <a href="https://elearning-demo.com" class="btn-glass">View Project</a>
-                </div>
-            </div>
-
-            <div class="glass-card project-card" data-category="robotics">
-                <img src="https://i.pinimg.com/736x/3a/9b/d2/3a9bd2479c0cb157f1186e781edfcb85.jpg" alt="Automation & Robotics">
-                <div class="project-info">
-                    <h3>Automation & Robotics</h3>
-                    <ul>
-                        <li>IoT Health Monitor</li>
-                        <li>Smart Agriculture System</li>
-                        <li>Voice-Controlled Robot</li>
-                    </ul>
-                    <a href="#" class="btn-glass">View more</a>
-                </div>
-            </div>
-
-            <div class="glass-card project-card" data-category="design">
-                <img src="https://i.pinimg.com/736x/e1/2a/31/e12a313ae5262c8f8170a9a631e333b0.jpg" alt="Graphic Design / UI/UX">
-                <div class="project-info">
-                    <h3>Graphic Design / UI/UX</h3>
-                    <ul>
-                        <li>Brand Identity Kit</li>
-                        <li>Interactive Figma Prototype</li>
-                        <li>Infographic Series</li>
-                    </ul>
-                    <a href="#" class="btn-glass">View more</a>
-                </div>
-            </div>
-
-            <div class="glass-card project-card" data-category="web">
-                <img src="https://i.pinimg.com/1200x/bc/a8/73/bca873cf91377ef59d1e0bb0369b7d98.jpg" alt="Web Development">
-                <div class="project-info">
-                    <h3>Web Development</h3>
-                    <ul>
-                        <li>Community Hub Website</li>
-                        <li>E-commerce Demo</li>
-                        <li>Portfolio Builder Tool</li>
-                    </ul>
-                    <a href="#" class="btn-glass">View more</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="section-padding">
-        <h2 class="section-title">Experience</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-date">2023 - Present</div>
-                <div class="timeline-content glass-card">
-                    <h3>Senior Web Developer</h3>
-                    <p>Leading frontend development for e-commerce platforms using React and Node.js.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">2021 - 2023</div>
-                <div class="timeline-content glass-card">
-                    <h3>UI/UX Designer</h3>
-                    <p>Designed user interfaces for fintech mobile applications at TechSolutions Rwanda.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="ai-recommender" class="section-padding ai-section">
-        <div class="glass-card ai-container">
-            <h2><i class="fas fa-robot"></i> AI Project Recommender</h2>
-            <p>Not sure what to look at? Let my AI assistant suggest a project based on your role.</p>
-            <select id="user-role" class="glass-input">
-                <option value="" disabled selected>Select your role...</option>
-                <option value="developer">I am a Developer</option>
-                <option value="designer">I am a Designer</option>
-                <option value="business">I am a Business Owner</option>
-            </select>
-            <button onclick="recommendProject()" class="btn-primary">Ask AI</button>
-            <div id="ai-result" class="ai-output"></div>
-        </div>
-    </section>
-
-    <section id="contact" class="section-padding contact-section">
-        <div class="contact-wrapper">
-            <div class="contact-info">
-                <div class="glass-pill">Connect with Us</div>
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <p class="greeting">Hello, I am <strong>Keza Kevin</strong></p>
+                <h1>WEB DEVELOPER</h1>
+                <p class="tagline">Building the web, one pixel and line at a time.</p>
                 
-                <div class="info-item">
-                    <i class="fas fa-phone-alt"></i>
-                    <div>
-                        <span>Phone</span>
-                        <p>+250 734 564 463</p>
-                    </div>
+                <div class="cta-group">
+                    <a href="#contact" class="btn-primary">Hire me</a>
+                    <a href="mailto:Kezadushime@gmail.com" class="btn-icon" aria-label="Email Keza Kevin"><i class="fas fa-envelope"></i></a>
                 </div>
                 
-                <div class="info-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <span>Email</span>
-                        <p>Kezadushime@gmail.com</p>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="btn-icon" aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://wa.me/250734564463" target="_blank" class="btn-icon" aria-label="WhatsApp Contact">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:Kezadushime@gmail.com" class="btn-icon" aria-label="Gmail Contact">
+                        <i class="fas fa-envelope-square"></i>
+                    </a>
+                </div>
+                <div class="glass-card testimonial-float">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"Thank you for sharing your work - the site is impressive and easy to navigate."</p>
+                    <div class="user-profile">
+                        <img src="https://via.placeholder.com/40" alt="Sophia Williams profile photo">
+                        <div>
+                            <h4>Sophia Williams</h4>
+                            <span>Business Owner</span>
+                            
+                        </div>
                     </div>
                 </div>
-                
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <span>Location</span>
-                        <p>Kigali, Rwanda</p>
-                    </div>
-                </div>
-
-                <img src="https://i.pinimg.com/1200x/ff/2d/bb/ff2dbb4ec56ba8bdb13aaf26c44463b2.jpg" class="contact-avatar" alt="Contact Support">
             </div>
 
-            <form class="glass-card contact-form" id="contactForm">
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" name="name" class="glass-input" required>
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" name="email" class="glass-input" required>
-                </div>
-                <div class="form-group">
-                    <label>Subject</label>
-                    <input type="text" name="subject" class="glass-input">
-                </div>
-                <div class="form-group">
-                    <label>Message</label>
-                    <textarea class="glass-input" name="message" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn-submit">Send Message</button>
-            </form>
-        </div>
-    </section>
+            <div class="hero-image">
+                <div class="stable-avatar">
+                    <img src="https://i.pinimg.com/736x/aa/4b/9c/aa4b9c0b9b8e927ff1a0fe53548d7c93.jpg" alt="Keza Kevin Main Avatar" loading="lazy">
+                
 
+                <div class="tech-icon icon-html"><i class="fab fa-html5" aria-label="HTML5 Icon"></i></div>
+                <div class="tech-icon icon-css"><i class="fab fa-css3-alt" aria-label="CSS3 Icon"></i></div>
+                <div class="tech-icon icon-js"><i class="fab fa-js" aria-label="JavaScript Icon"></i></div>
+                <div class="tech-icon icon-figma"><i class="fab fa-figma" aria-label="Figma Icon"></i></div>
+                <div class="tech-icon icon-react"><i class="fab fa-react" aria-label="React Icon"></i></div>
+                <div class="tech-icon icon-node"><i class="fab fa-node-js" aria-label="Node.js Icon"></i></div>
+            </div>
+        </section>
+        
+        <section id="about" class="section-padding">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content glass-card">
+                <p>Hello! I'm **Keza Kevin**, a passionate Web Developer based in **Kigali, Rwanda**, with a focus on building engaging, user-centric, and scalable digital experiences.</p>
+                <p>My journey in tech began with a deep curiosity about how things work on the internet, which quickly evolved into a drive to create them. I specialize in the full stack, bridging the gap between cutting-edge **UI/UX design** and robust **backend logic**.</p>
+                <p>I thrive in environments that value continuous learning and collaboration. When I'm not coding, you can find me exploring new design tools or contributing to open-source projects. My goal is to transform complex challenges into beautiful, simple, and efficient solutions.</p>
+                
+                <div class="about-details">
+                    <p><strong>Years of Experience:</strong> 4+</p>
+                    <p><strong>Focus:</strong> Full-Stack Development & UI/UX</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="skills" class="section-padding">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                
+                <div class="glass-card skill-category">
+                    <h3><i class="fas fa-code"></i> Frontend</h3>
+                    <ul>
+                        <li>**HTML5** & **CSS3** (Sass, LESS)</li>
+                        <li>**JavaScript (ES6+)**</li>
+                        <li>**React** & Redux</li>
+                        <li>Responsive Design & Accessibility</li>
+                    </ul>
+                </div>
+                
+                <div class="glass-card skill-category">
+                    <h3><i class="fas fa-server"></i> Backend</h3>
+                    <ul>
+                        <li>**Node.js** & **Express**</li>
+                        <li>Python & Flask/Django</li>
+                        <li>RESTful API Design</li>
+                        <li>Database Management (MongoDB, PostgreSQL)</li>
+                    </ul>
+                </div>
+                
+                <div class="glass-card skill-category">
+                    <h3><i class="fas fa-palette"></i> Design & Tools</h3>
+                    <ul>
+                        <li>**Figma** & Adobe XD</li>
+                        <li>Git & GitHub/GitLab</li>
+                        <li>AWS / Netlify / Vercel</li>
+                        <li>Agile/Scrum Methodology</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="portfolio" class="section-padding">
+            <div class="section-header-row">
+                <h2 class="section-title">My Portfolio</h2>
+                <button id="addProjectBtn" class="btn-primary btn-icon" type="button" aria-label="Add new project to portfolio"><i class="fas fa-plus"></i> Add Project</button>
+            </div>
+            <div class="filter-container">
+                <button class="filter-btn active" type="button" data-filter="all">All</button>
+                <button class="filter-btn" type="button" data-filter="robotics">Robotics</button>
+                <button class="filter-btn" type="button" data-filter="design">Design</button>
+                <button class="filter-btn" type="button" data-filter="web">Web Dev</button>
+            </div>
+
+            <div class="projects-grid portfolio-grid">
+                
+                <div class="glass-card project-card" data-category="web">
+                    <img src="https://i.pinimg.com/736x/46/1e/81/461e8129c506080a259e0fbc46d0a2d9.jpg" alt="Visit Rwanda Tourism Portal screenshot" loading="lazy">
+                    <div class="project-info">
+                        <h3>Visit Rwanda Tourism Portal</h3>
+                        <ul>
+                            <li>Interactive Booking & Payments</li>
+                            <li>Dynamic Destination Exploration</li>
+                            <li>Full-Stack Development</li>
+                        </ul>
+                        <a href="https://visitrwanda360.netlify.app/" target="_blank" class="btn-glass">View Project</a>
+                    </div>
+                </div>
+
+                <div class="glass-card project-card" data-category="web">
+                    <img src="https://i.pinimg.com/1200x/5c/4f/02/5c4f0214fbe0d063dd4ff3a84610da9a.jpg" alt="Personal Finance Tracker screenshot" loading="lazy">
+                    <div class="project-info">
+                        <h3>Personal Finance Tracker</h3>
+                        <ul>
+                            <li>Expense Tracking & Categorization</li>
+                            <li>Budgeting & Reporting</li>
+                            <li>React & Data Visualization</li>
+                        </ul>
+                        <a href="http://127.0.0.1:5500/welcome.html" target="_blank" class="btn-glass">View Project</a>
+                    </div>
+                </div>
+
+                <div class="glass-card project-card" data-category="web">
+                    <img src="https://i.pinimg.com/736x/55/7c/64/557c64034ecc52a10522dd77a80c8700.jpg" alt="Interactive E-learning Platform screenshot" loading="lazy">
+                    <div class="project-info">
+                        <h3>Interactive E-learning Platform</h3>
+                        <ul>
+                            <li>User Auth & Progress Tracking</li>
+                            <li>Video Hosting & Quiz Modules</li>
+                            <li>React/Express Full Stack</li>
+                        </ul>
+                        <a href="https://elearning-demo.com" target="_blank" class="btn-glass">View Project</a>
+                    </div>
+                </div>
+
+                <div class="glass-card project-card" data-category="robotics">
+                    <img src="https://i.pinimg.com/736x/3a/9b/d2/3a9bd2479c0cb157f1186e781edfcb85.jpg" alt="Automation and Robotics project image" loading="lazy">
+                    <div class="project-info">
+                        <h3>Automation & Robotics</h3>
+                        <ul>
+                            <li>IoT Health Monitor</li>
+                            <li>Smart Agriculture System</li>
+                            <li>Voice-Controlled Robot</li>
+                        </ul>
+                        <a href="#" class="btn-glass">View more</a>
+                    </div>
+                </div>
+
+                <div class="glass-card project-card" data-category="design">
+                    <img src="https://i.pinimg.com/736x/e1/2a/31/e12a313ae5262c8f8170a9a631e333b0.jpg" alt="Graphic Design and UI/UX examples" loading="lazy">
+                    <div class="project-info">
+                        <h3>Graphic Design / UI/UX</h3>
+                        <ul>
+                            <li>Brand Identity Kit</li>
+                            <li>Interactive Figma Prototype</li>
+                            <li>Infographic Series</li>
+                        </ul>
+                        <a href="#" class="btn-glass">View more</a>
+                    </div>
+                </div>
+
+                <div class="glass-card project-card" data-category="web">
+                    <img src="https://i.pinimg.com/1200x/bc/a8/73/bca873cf91377ef59d1e0bb0369b7d98.jpg" alt="Web Development portfolio image" loading="lazy">
+                    <div class="project-info">
+                        <h3>Web Development</h3>
+                        <ul>
+                            <li>Community Hub Website</li>
+                            <li>E-commerce Demo</li>
+                            <li>Portfolio Builder Tool</li>
+                        </ul>
+                        <a href="#" class="btn-glass">View more</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section-padding">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 - Present</div>
+                    <div class="timeline-content glass-card">
+                        <h3>Senior Web Developer</h3>
+                        <p>Leading frontend development for e-commerce platforms using React and Node.js.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2021 - 2023</div>
+                    <div class="timeline-content glass-card">
+                        <h3>UI/UX Designer</h3>
+                        <p>Designed user interfaces for fintech mobile applications at TechSolutions Rwanda.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-padding contact-section">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="glass-pill">Connect with Us</div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                        <div>
+                            <span>Phone</span>
+                            <p>+250 734 564 463</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <div>
+                            <span>Email</span>
+                            <p>Kezadushime@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <div>
+                            <span>Location</span>
+                            <p>Kigali, Rwanda</p>
+                        </div>
+                    </div>
+
+                    <img src="https://i.pinimg.com/1200x/ff/2d/bb/ff2dbb4ec56ba8bdb13aaf26c44463b2.jpg" class="contact-avatar" alt="Stylized contact support avatar" loading="lazy">
+                </div>
+
+                <form class="glass-card contact-form" id="contactForm">
+                    <h2 class="section-title">Get in Touch</h2>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" class="glass-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="glass-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" class="glass-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="glass-input" id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
     <footer>
         <p>&copy; 2025 Keza Kevin. All rights reserved.</p>
     </footer>
 
-    <div id="projectModal" class="modal">
+    <button id="ai-chat-btn" class="floating-btn glass-btn" type="button" aria-label="Open AI Chat Assistant">
+        <i class="fas fa-comment-dots"></i>
+    </button>
+
+    <div id="ai-chat-modal" class="modal ai-chat-modal" role="dialog" aria-modal="true" aria-labelledby="chatModalTitle" style="display: none;">
+        <div class="modal-content glass-card chat-interface">
+            <button class="close-button" type="button" aria-label="Close Chat" onclick="toggleChatModal()">&times;</button>
+            <h3 id="chatModalTitle"><i class="fas fa-robot"></i> Kevin's AI Assistant</h3>
+            <div class="chat-history" id="chatHistory">
+                <div class="chat-message ai-message">
+                    Hello! I'm Keza Kevin's AI Assistant. How can I help you navigate his portfolio or answer questions about his skills?
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chatInput" class="glass-input" placeholder="Ask me about Keza Kevin's work...">
+                <button onclick="sendMessage()" class="btn-primary-small" type="button">Send</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display: none;">
         <div class="modal-content glass-card">
-            <span class="close-button">&times;</span>
-            <h3>Add New Portfolio Project</h3>
+            <button class="close-button" type="button" aria-label="Close Modal" onclick="toggleProjectModal()">&times;</button>
+            <h3 id="modalTitle">Add New Portfolio Project</h3>
             <form id="newProjectForm">
                 <div class="form-group">
                     <label for="projectTitle">Project Title*</label>
@@ -328,7 +357,7 @@
                     <label for="projectImageLink">Image URL (Optional)</label>
                     <input type="url" id="projectImageLink" name="projectImageLink" class="glass-input" placeholder="https://example.com/image.jpg">
                 </div>
-                 <div class="form-group">
+                <div class="form-group">
                     <label for="projectLink">Project Link (Live or GitHub)</label>
                     <input type="url" id="projectLink" name="projectLink" class="glass-input" placeholder="https://github.com/...">
                 </div>
@@ -337,6 +366,7 @@
             </form>
         </div>
     </div>
+    
     <script src="script.js"></script> 
 </body>
 </html>
