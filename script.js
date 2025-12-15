@@ -1,13 +1,5 @@
 // portfolio.js
 
-// Import utilities from theme.js (assuming you implemented the theme feature)
-import { initializeTheme } from "./theme.js";
-
-// Import initialized Firebase services from the inline script in index.html
-import { db, auth } from "./index.html"; // We assume the firebase script block is in index.html
-
-// Import necessary Firestore functions
-import { collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
 
 
 document.addEventListener('DOMContentLoaded', () => {
