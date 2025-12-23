@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keza Kevin | Portfolio</title>
+    <title>Keza Kevin | Health-Tech Architect</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -12,362 +12,481 @@
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
         
         :root {
-            --primary: #0d4a52; 
-            --accent: #f26522;  
-            --bg-body: #f8fafc;
-            --text-main: #0d4a52;
-            --card-bg: #ffffff;
-            --glass: rgba(255, 255, 255, 0.85);
+            --primary: #10b981; 
+            --accent: #059669; 
+            --highlight: #0284c7; 
+            --bg: #ffffff;
+            --text: #0f172a;
+            --card: #f8fafc;
+            --border: #e2e8f0;
+            --nav-bg: rgba(255, 255, 255, 0.8);
         }
 
         body.dark {
-            --primary: #14b8a6; 
-            --bg-body: #0f172a;
-            --text-main: #f8fafc;
-            --card-bg: #1e293b;
-            --glass: rgba(15, 23, 42, 0.9);
+            --bg: #0f172a;
+            --text: #f1f5f9;
+            --card: #1e293b;
+            --border: #334155;
+            --nav-bg: rgba(15, 23, 42, 0.9);
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            transition: background-color 0.5s ease;
-            overflow-x: hidden;
+            background-color: var(--bg);
+            color: var(--text);
+            transition: background 0.4s ease;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
-        /* Text Swapping Animation */
-        .changing-text::after {
-            content: "Digital Logic";
-            animation: textSwap 8s infinite;
-            color: var(--accent);
-        }
-        @keyframes textSwap {
-            0%, 30% { content: "Digital Logic"; }
-            33%, 63% { content: "Web Development"; }
-            66%, 100% { content: "IoT & Automation"; }
+        /* Improved UI Utilities */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Hero Moving Gallery */
-        .hero-gallery { display: flex; gap: 15px; transform: rotate(-3deg); height: 1200px; }
-        .gallery-col { display: flex; flex-direction: column; gap: 15px; animation: riseUp var(--dur) linear infinite; }
-        .gallery-item { width: 180px; height: 250px; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        @keyframes riseUp { 0% { transform: translateY(0); } 100% { transform: translateY(-50%); } }
-
-        /* Sliding Bio Animation */
-        .bio-slide {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: 1.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+        /* --- TIMELINE STYLES --- */
+        .timeline-container { position: relative; }
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary), var(--highlight), transparent);
         }
-        .bio-slide.active {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* Skill Bar Charts */
-        .skill-per {
-            height: 100%;
-            background: var(--accent);
-            border-radius: 10px;
-            width: 0;
-            transition: 2.5s cubic-bezier(0.1, 1, 0.1, 1);
+        .timeline-item { position: relative; padding-left: 60px; margin-bottom: 40px; }
+        .timeline-dot {
+            position: absolute;
+            left: 11px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            background: var(--bg);
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            z-index: 10;
         }
 
-        /* AI Sidebar */
-        #ai-sidebar {
-            position: fixed; right: -400px; top: 0; width: 350px; height: 100vh;
-            background: var(--card-bg); box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-            transition: 0.5s ease; z-index: 2000;
-            display: flex; flex-direction: column;
-        }
-        #ai-sidebar.active { right: 0; }
+        /* --- GALLERY & ANIMATIONS --- */
+        .hero-gallery { display: flex; gap: 1rem; height: 500px; overflow: hidden; mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent); }
+        .gallery-col { display: flex; flex-direction: column; gap: 1rem; animation: scrollGallery var(--dur) linear infinite; }
+        @keyframes scrollGallery { 0% { transform: translateY(0); } 100% { transform: translateY(-50%); } }
+        .gallery-item { width: 120px; height: 160px; border-radius: 15px; object-fit: cover; border: 1px solid var(--border); transition: 0.4s; }
 
-        .project-card { 
-            background: var(--card-bg); border-radius: 30px; overflow: hidden; 
-            transition: all 0.4s ease; border: 1px solid rgba(0,0,0,0.05);
-        }
-        .project-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
+        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
-        .modal {
-            position: fixed; inset: 0; background: rgba(0,0,0,0.8);
-            backdrop-filter: blur(10px); z-index: 3000;
-            display: none; align-items: center; justify-content: center;
+        .btn-main { background: var(--primary); color: white; transition: 0.3s; display: inline-block; text-align: center; box-shadow: 0 10px 20px -10px var(--primary); }
+        .btn-main:hover { filter: brightness(1.1); transform: translateY(-2px); box-shadow: 0 15px 25px -10px var(--primary); }
+
+        .marquee-wrapper { overflow: hidden; user-select: none; display: flex; gap: 2rem; padding: 2rem 0; }
+        .marquee-content { flex-shrink: 0; display: flex; gap: 2rem; animation: scrollMarquee 40s linear infinite; }
+        @keyframes scrollMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        
+        #project-modal { 
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); 
+            z-index: 9999; display: none; align-items: center; justify-content: center; padding: 20px;
         }
 
-        /* Testimonial Cards */
-        .testimonial-card {
-            background: var(--card-bg);
-            border-radius: 30px;
-            padding: 30px;
-            border: 1px solid rgba(0,0,0,0.05);
-            transition: 0.3s;
-        }
-        .testimonial-card:hover { border-color: var(--accent); }
+        .filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
     </style>
 </head>
-<body>
+<body class="light">
 
-    <header class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md py-4 z-[1000] border-b border-black/5">
+    <header class="fixed top-0 w-full py-4 z-[1000] backdrop-blur-xl border-b border-slate-200/50 bg-[var(--nav-bg)]">
         <div class="container mx-auto px-6 flex justify-between items-center">
-            <div class="font-black text-2xl tracking-tighter italic">KEZA<span class="text-orange-500">.</span></div>
-            <nav class="hidden lg:flex gap-8 items-center">
-                <a href="#home" class="text-[10px] font-bold uppercase tracking-widest hover:text-orange-500 transition">Home</a>
-                <a href="#about" class="text-[10px] font-bold uppercase tracking-widest hover:text-orange-500 transition">About</a>
-                <a href="#portfolio" class="text-[10px] font-bold uppercase tracking-widest hover:text-orange-500 transition">Portfolio</a>
-                <a href="#testimonials" class="text-[10px] font-bold uppercase tracking-widest hover:text-orange-500 transition">Reviews</a>
-                <a href="#contact" class="text-[10px] font-bold uppercase tracking-widest hover:text-orange-500 transition">Connect</a>
-                <button id="themeToggle" class="w-10 h-10 rounded-full border border-current opacity-50"><i class="fas fa-moon"></i></button>
+            <div class="font-black text-2xl tracking-tighter italic text-slate-900 dark:text-white">KEZA<span class="text-emerald-500">.</span></div>
+            <nav class="hidden md:flex gap-8 font-bold text-[10px] uppercase tracking-widest text-slate-500">
+                <a href="#home" class="hover:text-emerald-500 transition">Home</a>
+                <a href="#about" class="hover:text-emerald-500 transition">About</a>
+                <a href="#experience" class="hover:text-emerald-500 transition">Experience</a>
+                <a href="#projects" class="hover:text-emerald-500 transition">Work</a>
+                <a href="blog.html" class="text-emerald-500 hover:opacity-70 transition">Blog</a>
             </nav>
-            <button class="bg-orange-500 text-white px-6 py-2 rounded-full font-bold text-[10px] uppercase">Resume</button>
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" onclick="toggleTheme()" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                    <i class="fas fa-moon text-slate-600 dark:text-yellow-400"></i>
+                </button>
+                <a href="#" class="border-2 border-emerald-500 text-emerald-500 px-6 py-2 rounded-xl font-black text-[9px] uppercase hover:bg-emerald-500 hover:text-white transition">CV</a>
+            </div>
         </div>
     </header>
 
-    <section id="home" class="relative min-h-screen flex items-center pt-24 overflow-hidden">
-        <div class="container mx-auto px-6 lg:px-24 grid lg:grid-cols-2 gap-12 items-center">
-            <div class="z-10">
-                <div class="mb-4 inline-block px-4 py-1 rounded-full bg-orange-500/10 text-orange-500 text-[10px] font-black uppercase tracking-[0.2em]">Available for Projects</div>
-                <h1 class="text-6xl md:text-7xl font-black uppercase leading-[0.9] mb-8">Building <br><span class="changing-text"></span></h1>
-                <p class="text-lg mb-10 max-w-md opacity-70 font-medium">I transform complex challenges into simple, beautiful, and efficient digital solutions.</p>
-                
-                <div class="flex flex-wrap gap-4 items-center">
-                    <a href="#portfolio" class="bg-primary text-white px-10 py-5 rounded-2xl font-black uppercase text-xs tracking-widest shadow-2xl transition" style="background-color: var(--primary);">Explore Work</a>
-                    
-                    <a href="https://wa.me/250734564463" target="_blank" class="w-14 h-14 bg-green-500 text-white rounded-2xl flex items-center justify-center text-2xl shadow-lg hover:scale-110 transition">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    
-                    <a href="https://facebook.com" target="_blank" class="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center text-2xl shadow-lg hover:scale-110 transition">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-
-                    <button onclick="toggleModal()" class="ml-auto text-primary font-black uppercase text-[10px] tracking-widest underline decoration-orange-500 underline-offset-8">Add Project</button>
+    <section id="home" class="min-h-screen flex items-center pt-24 bg-slate-50 dark:bg-slate-950">
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div class="reveal">
+                <div class="inline-block px-4 py-1.5 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold mb-6 border border-emerald-200 dark:border-emerald-800/50">System Architect 2025</div>
+                <h1 class="text-6xl lg:text-8xl font-black uppercase leading-[0.9] mb-6 tracking-tighter text-slate-900 dark:text-white">
+                    Health <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-sky-500">Tech Lead</span>
+                </h1>
+                <p class="text-lg text-slate-500 dark:text-slate-400 mb-10 max-w-md font-medium leading-relaxed">Engineering the future of medicine through IoT, Data Logic, and Digital Systems.</p>
+                <div class="flex gap-6 items-center">
+                    <a href="#contact" class="btn-main px-10 py-5 rounded-2xl font-black uppercase text-xs">Start Project</a>
+                    <a href="https://wa.me/250734564463" target="_blank" class="text-2xl text-emerald-500 hover:scale-110 transition"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             
-            <div class="hidden lg:flex justify-end h-[650px] overflow-hidden relative">
+            <div class="reveal hidden lg:flex items-center gap-4 h-[500px] justify-end">
                 <div class="hero-gallery">
-                    <div class="gallery-col" style="--dur: 25s;">
-                        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80" class="w-full h-full object-cover"></div>
-                        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80" class="w-full h-full object-cover"></div>
-                    </div>
-                    <div class="gallery-col" style="--dur: 18s; margin-top: 60px;">
-                        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80" class="w-full h-full object-cover"></div>
-                        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80" class="w-full h-full object-cover"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-32 bg-black/5">
-        <div class="container mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-20 items-center">
-                <div class="bio-slide">
-                    <div class="inline-block px-4 py-1 rounded-full bg-orange-500/10 text-orange-500 text-[10px] font-black uppercase tracking-[0.2em] mb-4">Biography</div>
-                    <h2 class="text-5xl font-black uppercase mb-8 leading-tight">Driven by Logic,<br> Defined by Code.</h2>
-                    <p class="text-lg opacity-70 mb-10 leading-relaxed">Based in Kigali, Rwanda, I specialize in building bridges between the digital and physical worlds. From sophisticated web architectures to interactive IoT devices.</p>
-                    
-                    <div class="space-y-6">
-                        <div class="skill-box">
-                            <div class="flex justify-between mb-2"><span class="text-xs font-black uppercase">Web Development</span><span class="text-xs font-black">92%</span></div>
-                            <div class="w-full h-2 bg-black/10 rounded-full overflow-hidden"><div class="skill-per" data-width="92%"></div></div>
-                        </div>
-                        <div class="skill-box">
-                            <div class="flex justify-between mb-2"><span class="text-xs font-black uppercase">IoT & Robotics</span><span class="text-xs font-black">88%</span></div>
-                            <div class="w-full h-2 bg-black/10 rounded-full overflow-hidden"><div class="skill-per" data-width="88%"></div></div>
-                        </div>
-                        <div class="skill-box">
-                            <div class="flex justify-between mb-2"><span class="text-xs font-black uppercase">Software Architecture</span><span class="text-xs font-black">85%</span></div>
-                            <div class="w-full h-2 bg-black/10 rounded-full overflow-hidden"><div class="skill-per" data-width="85%"></div></div>
-                        </div>
+                    <div class="gallery-col" style="--dur: 20s;">
+                        <img src="https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=200" class="gallery-item">
+                        <img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=200" class="gallery-item">
+                        <img src="https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=200" class="gallery-item">
                     </div>
                 </div>
                 <div class="relative">
-                    <div class="w-full aspect-square rounded-[60px] overflow-hidden rotate-3 shadow-2xl">
-                        <img src="https://i.pinimg.com/736x/6a/16/9d/6a169d35c6be4a938c86bd7b0398aaa3.jpg" class="w-full h-full object-cover">
+                    <img src="https://i.pinimg.com/736x/fc/e6/93/fce693e4be192e6943e4a0fc3957a005.jpg" 
+                         class="w-[280px] lg:w-[350px] h-[450px] object-cover rounded-[50px] border-4 border-white dark:border-slate-800 shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-32 bg-white dark:bg-slate-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-black uppercase mb-16 text-slate-900 dark:text-white text-center lg:text-left">
+                The <span class="text-emerald-500">Pitch</span>
+            </h2>
+
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <div class="reveal relative group">
+                    <div class="absolute -inset-4 bg-gradient-to-tr from-emerald-500 to-sky-500 rounded-[50px] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                    <div class="relative aspect-video w-full bg-slate-200 dark:bg-slate-800 rounded-[40px] overflow-hidden border-4 border-white dark:border-slate-700 shadow-2xl">
+                        <iframe class="w-full h-full" src="Kevin_ IT Specialist.mp4" title="Pitch Video" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="reveal space-y-10">
+                    <div>
+                        <h3 class="text-xs font-black text-emerald-500 uppercase tracking-[0.4em] mb-4">Elevator Pitch</h3>
+                        <p class="text-2xl lg:text-4xl font-black leading-tight text-slate-900 dark:text-white mb-6">
+                            "I don't just write code; I build <span class="text-sky-500">digital bridges</span> for the medical world."
+                        </p>
+                        <p class="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">
+                            I help clinical organizations bridge the gap between complex hardware and patient care. By automating data logic and securing medical systems, I ensure doctors focus on lives.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <h4 class="text-[10px] font-black uppercase tracking-widest text-slate-400">Core Expertise</h4>
+                        <div class="skill-bar">
+                            <div class="flex justify-between mb-2"><span class="text-xs font-bold uppercase dark:text-white">IoT Architecture</span><span class="text-emerald-500 text-xs font-bold">95%</span></div>
+                            <div class="h-1.5 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-emerald-500" style="width: 95%"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="flex justify-between mb-2"><span class="text-xs font-bold uppercase dark:text-white">Medical ERP</span><span class="text-emerald-500 text-xs font-bold">92%</span></div>
+                            <div class="h-1.5 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-emerald-500" style="width: 92%"></div></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="portfolio" class="py-32">
+    <section id="tools" class="py-32 bg-slate-50 dark:bg-slate-950">
         <div class="container mx-auto px-6">
-            <h2 class="text-5xl font-black uppercase mb-16">Selected Projects</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                
-                <div class="project-card group">
-                    <div class="h-64 relative overflow-hidden">
-                        <img src="https://i.pinimg.com/736x/9b/95/a6/9b95a63fc8bb2bfab6835a312bc89c43.jpg" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center p-6 text-center" style="background-color: var(--primary);">
-                            <h4 class="text-white font-black uppercase mb-4">Smart Blind Stick</h4>
-                            <a href="https://youtu.be/FdAKSRsonU4" target="_blank" class="w-10 h-10 rounded-full bg-white text-orange-500 flex items-center justify-center shadow-xl hover:scale-110 transition"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="text-orange-500 text-[9px] font-black uppercase mb-1">IoT & Robotics</div>
-                        <h3 class="text-md font-black uppercase">Assistive Stick</h3>
-                    </div>
+            <h2 class="text-5xl font-black uppercase mb-16 text-slate-900 dark:text-white">Technical <span class="text-emerald-500">Arsenal</span></h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <div class="reveal bg-white dark:bg-slate-900 p-8 rounded-[35px] text-center border border-slate-200 dark:border-slate-800 hover:border-emerald-500 transition-all shadow-sm hover:shadow-xl group">
+                    <i class="fas fa-microchip text-3xl text-emerald-500 mb-4 group-hover:scale-110 transition"></i>
+                    <p class="text-[10px] font-bold uppercase tracking-widest dark:text-white">Arduino</p>
                 </div>
-
-                <div class="project-card group">
-                    <div class="h-64 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center p-6 text-center" style="background-color: var(--primary);">
-                            <h4 class="text-white font-black uppercase mb-4">Finance Tracker</h4>
-                            <a href="#" class="w-10 h-10 rounded-full bg-white text-orange-500 flex items-center justify-center shadow-xl hover:scale-110 transition"><i class="fas fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="text-orange-500 text-[9px] font-black uppercase mb-1">Web Development</div>
-                        <h3 class="text-md font-black uppercase">Smart Wallet</h3>
-                    </div>
+                <div class="reveal bg-white dark:bg-slate-900 p-8 rounded-[35px] text-center border border-slate-200 dark:border-slate-800 hover:border-sky-500 transition-all shadow-sm hover:shadow-xl group">
+                    <i class="fab fa-python text-3xl text-sky-500 mb-4 group-hover:scale-110 transition"></i>
+                    <p class="text-[10px] font-bold uppercase tracking-widest dark:text-white">Python / AI</p>
                 </div>
-
-                <div class="project-card group">
-                    <div class="h-64 relative overflow-hidden">
-                        <img src="https://i.pinimg.com/736x/21/9e/46/219e469502848970899144e007823904.jpg" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center p-6 text-center" style="background-color: var(--primary);">
-                            <h4 class="text-white font-black uppercase mb-4">Visit Rwanda Web</h4>
-                            <a href="#" class="w-10 h-10 rounded-full bg-white text-orange-500 flex items-center justify-center shadow-xl hover:scale-110 transition"><i class="fas fa-globe"></i></a>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="text-orange-500 text-[9px] font-black uppercase mb-1">Web & Tourism</div>
-                        <h3 class="text-md font-black uppercase">Visit Rwanda</h3>
-                    </div>
+                <div class="reveal bg-white dark:bg-slate-900 p-8 rounded-[35px] text-center border border-slate-200 dark:border-slate-800 hover:border-emerald-500 transition-all shadow-sm hover:shadow-xl group">
+                    <i class="fas fa-database text-3xl text-emerald-500 mb-4 group-hover:scale-110 transition"></i>
+                    <p class="text-[10px] font-bold uppercase tracking-widest dark:text-white">PostgreSQL</p>
                 </div>
-
-                <div class="project-card group">
-                    <div class="h-64 relative overflow-hidden">
-                        <img src="https://i.pinimg.com/736x/83/b2/ca/83b2ca922e98d61acd51d95aebd168c5.jpg" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center p-6 text-center" style="background-color: var(--primary);">
-                            <h4 class="text-white font-black uppercase mb-4">Coffee ERP System</h4>
-                            <a href="#" class="w-10 h-10 rounded-full bg-white text-orange-500 flex items-center justify-center shadow-xl hover:scale-110 transition"><i class="fas fa-cog"></i></a>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="text-orange-500 text-[9px] font-black uppercase mb-1">Enterprise</div>
-                        <h3 class="text-md font-black uppercase">Kigali Brew</h3>
-                    </div>
+                <div class="reveal bg-white dark:bg-slate-900 p-8 rounded-[35px] text-center border border-slate-200 dark:border-slate-800 hover:border-sky-500 transition-all shadow-sm hover:shadow-xl group">
+                    <i class="fab fa-react text-3xl text-sky-500 mb-4 group-hover:scale-110 transition"></i>
+                    <p class="text-[10px] font-bold uppercase tracking-widest dark:text-white">React Native</p>
                 </div>
-
+                <div class="reveal bg-white dark:bg-slate-900 p-8 rounded-[35px] text-center border border-slate-200 dark:border-slate-800 hover:border-emerald-500 transition-all shadow-sm hover:shadow-xl group">
+                    <i class="fas fa-network-wired text-3xl text-emerald-500 mb-4 group-hover:scale-110 transition"></i>
+                    <p class="text-[10px] font-bold uppercase tracking-widest dark:text-white">MQTT / IoT</p>
+                </div>
+                <div class="reveal bg-white dark:bg-slate-900 p-8 rounded-[35px] text-center border border-slate-200 dark:border-slate-800 hover:border-sky-500 transition-all shadow-sm hover:shadow-xl group">
+                    <i class="fas fa-shield-alt text-3xl text-sky-500 mb-4 group-hover:scale-110 transition"></i>
+                    <p class="text-[10px] font-bold uppercase tracking-widest dark:text-white">Security</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="testimonials" class="py-32 bg-black/5">
+    <section id="projects" class="py-32 bg-white dark:bg-slate-900">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                <div>
-                    <div class="text-orange-500 text-[10px] font-black uppercase tracking-[0.2em] mb-4">Success Stories</div>
-                    <h2 class="text-5xl font-black uppercase leading-tight">What Clients <br>Say About Me.</h2>
-                </div>
-                <p class="max-w-xs opacity-60 text-sm font-medium italic">"Kevin's ability to blend hardware with sleek software is truly unique in the Rwandan tech space."</p>
+            <h2 class="text-5xl font-black uppercase mb-8 text-slate-900 dark:text-white">Selected Work</h2>
+            <div class="flex flex-wrap gap-4 mb-12">
+                <button class="filter-btn active border-2 border-emerald-500 px-6 py-2 rounded-full text-[10px] font-black uppercase" onclick="filterProjects('All')">All</button>
+                <button class="filter-btn border-2 border-emerald-500 px-6 py-2 rounded-full text-[10px] font-black uppercase" onclick="filterProjects('IoT')">IoT</button>
+                <button class="filter-btn border-2 border-emerald-500 px-6 py-2 rounded-full text-[10px] font-black uppercase" onclick="filterProjects('Software')">Software</button>
             </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8" id="project-grid"></div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-32 bg-slate-50 dark:bg-slate-950">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-black uppercase mb-16 text-center text-slate-900 dark:text-white">Journey</h2>
+            <div class="max-w-4xl mx-auto timeline-container">
+                <div class="reveal timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="text-emerald-600 font-bold text-sm">2023 - Present</span>
+                    <h3 class="text-2xl font-bold mt-2 dark:text-white">Lead Systems Architect</h3>
+                    <p class="text-sky-600 text-sm font-bold uppercase mb-4">HealthLink Solutions</p>
+                    <p class="text-slate-500 dark:text-slate-400">Developing large-scale ERP systems and IoT integrated networks for major clinics in East Africa.</p>
+                </div>
+                <div class="reveal timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="text-emerald-600 font-bold text-sm">2021 - 2023</span>
+                    <h3 class="text-2xl font-bold mt-2 dark:text-white">Embedded Developer</h3>
+                    <p class="text-sky-600 text-sm font-bold uppercase mb-4">TechMed Lab Rwanda</p>
+                    <p class="text-slate-500 dark:text-slate-400">Designed hardware sensors for medical accessibility and low-latency data transmission.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-900 text-white overflow-hidden">
+        <div class="marquee-wrapper">
+            <div class="marquee-content" id="marquee-inner">
+                <div class="min-w-[300px] p-8 bg-slate-800 rounded-3xl border border-slate-700">
+                    <p class="italic opacity-70 text-sm">"Keza's systems are professional and highly reliable."</p>
+                    <div class="text-emerald-400 font-bold text-[10px] uppercase mt-4">Clinical Partner</div>
+                </div>
+                <div class="min-w-[300px] p-8 bg-slate-800 rounded-3xl border border-slate-700">
+                    <p class="italic opacity-70 text-sm">"The IoT integration saved our clinic hours of manual data entry."</p>
+                    <div class="text-emerald-400 font-bold text-[10px] uppercase mt-4">MedTech Rwanda</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-32 bg-white dark:bg-slate-900">
+        <div class="container mx-auto max-w-4xl bg-slate-50 dark:bg-slate-800/50 p-12 lg:p-20 rounded-[60px] border border-slate-200 dark:border-slate-700 shadow-2xl">
+            <h2 class="text-5xl font-black uppercase mb-4 text-center text-slate-900 dark:text-white">Get in Touch</h2>
+            <p class="text-center text-slate-500 dark:text-slate-400 mb-12 uppercase text-[10px] font-bold tracking-[0.3em]">Let's build the future of health together</p>
             
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="testimonial-card">
-                    <div class="text-orange-500 mb-6 text-xl"><i class="fas fa-quote-left"></i></div>
-                    <p class="text-sm leading-relaxed mb-8 opacity-80">"The Smart Blind Stick project Kevin developed has changed lives. His technical depth in IoT is impressive."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-orange-500/20 overflow-hidden"><img src="https://i.pravatar.cc/150?u=1" alt=""></div>
-                        <div>
-                            <div class="text-xs font-black uppercase">Jean Paul N.</div>
-                            <div class="text-[9px] opacity-50 uppercase font-bold">NGO Director</div>
-                        </div>
-                    </div>
+            <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6 max-w-xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <input type="text" name="name" required placeholder="Full Name" 
+                        class="w-full bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 outline-none focus:border-emerald-500 text-slate-900 dark:text-white transition-all">
+                    
+                    <input type="email" name="_replyto" required placeholder="Email Address" 
+                        class="w-full bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 outline-none focus:border-emerald-500 text-slate-900 dark:text-white transition-all">
                 </div>
-                <div class="testimonial-card">
-                    <div class="text-orange-500 mb-6 text-xl"><i class="fas fa-quote-left"></i></div>
-                    <p class="text-sm leading-relaxed mb-8 opacity-80">"Kevin built our ERP system from scratch. It's fast, secure, and exactly what our coffee business needed."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-orange-500/20 overflow-hidden"><img src="https://i.pravatar.cc/150?u=2" alt=""></div>
-                        <div>
-                            <div class="text-xs font-black uppercase">Marie Louise U.</div>
-                            <div class="text-[9px] opacity-50 uppercase font-bold">Kigali Brew CEO</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="text-orange-500 mb-6 text-xl"><i class="fas fa-quote-left"></i></div>
-                    <p class="text-sm leading-relaxed mb-8 opacity-80">"The Visit Rwanda project showcases his talent for creating beautiful, modern, and high-performance web experiences."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-orange-500/20 overflow-hidden"><img src="https://i.pravatar.cc/150?u=3" alt=""></div>
-                        <div>
-                            <div class="text-xs font-black uppercase">Eric S.</div>
-                            <div class="text-[9px] opacity-50 uppercase font-bold">Tech Consultant</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                
+                <textarea name="message" required placeholder="Describe your Health-Tech project..." 
+                    class="w-full bg-white dark:bg-slate-900 p-5 rounded-2xl h-32 border border-slate-200 dark:border-slate-700 outline-none focus:border-emerald-500 text-slate-900 dark:text-white transition-all"></textarea>
+                
+                <input type="text" name="_gotcha" style="display:none">
+
+                <button type="submit" id="submitBtn" class="w-full btn-main py-5 rounded-2xl font-black uppercase text-sm flex items-center justify-center gap-3">
+                    <span>Send Message</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+                
+                <p id="formStatus" class="hidden text-center text-[10px] font-bold uppercase tracking-widest mt-4"></p>
+            </form>
         </div>
     </section>
 
-    <section id="contact" class="py-32 px-6">
-        <div class="container mx-auto max-w-5xl bg-primary text-white rounded-[50px] overflow-hidden flex flex-wrap shadow-2xl" style="background-color: var(--primary);">
-            <div class="w-full lg:w-1/2 p-12 lg:p-20">
-                <h2 class="text-5xl font-black uppercase mb-6">Let's build <br> something.</h2>
-                <div class="space-y-4">
-                    <p class="flex items-center gap-4 text-sm font-bold"><i class="fas fa-envelope text-orange-500"></i> Kezadushime@gmail.com</p>
-                    <p class="flex items-center gap-4 text-sm font-bold"><i class="fas fa-phone text-orange-500"></i> +250 734 564 463</p>
-                </div>
-            </div>
-            <div class="w-full lg:w-1/2 bg-white/10 backdrop-blur-3xl p-12 lg:p-20 border-l border-white/5">
-                <form class="space-y-6">
-                    <input type="text" placeholder="Name" class="w-full bg-white/10 border border-white/20 p-5 rounded-2xl outline-none focus:border-orange-500 transition text-white">
-                    <textarea placeholder="Your Message" class="w-full bg-white/10 border border-white/20 p-5 rounded-2xl h-32 outline-none focus:border-orange-500 transition text-white"></textarea>
-                    <button class="w-full bg-orange-500 text-white py-5 rounded-2xl font-black uppercase tracking-[0.2em] shadow-xl hover:bg-white hover:text-orange-500 transition-all">Send Inquiry</button>
-                </form>
-            </div>
+    <footer class="py-12 text-center border-t border-slate-100 dark:border-slate-800 text-[10px] font-bold uppercase tracking-widest text-slate-400">
+        <div class="flex justify-center gap-6 mb-4 text-lg">
+            <a href="https://github.com" class="hover:text-emerald-500 transition"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com" class="hover:text-emerald-500 transition"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:kezadushime@gmail.com" class="hover:text-emerald-500 transition"><i class="fas fa-envelope"></i></a>
         </div>
-    </section>
+        &copy; 2025 Keza Kevin | All Rights Reserved.
+    </footer>
 
-    <footer class="py-10 text-center opacity-30 text-[10px] uppercase font-bold tracking-[0.4em]">Keza Kevin &copy; 2025</footer>
-
-    <button onclick="toggleChat()" class="fixed bottom-10 right-10 w-16 h-16 bg-orange-500 rounded-full text-white shadow-2xl z-[1500] hover:scale-110 transition"><i class="fas fa-robot text-2xl"></i></button>
-
-    <div id="ai-sidebar">
-        <div class="p-8 bg-primary text-white flex justify-between items-center" style="background-color: var(--primary);">
-            <h3 class="font-black uppercase text-lg">Keza AI</h3>
-            <button onclick="toggleChat()" class="text-2xl">&times;</button>
-        </div>
-        <div class="flex-1 p-6 overflow-y-auto" id="chat-content">
-            <div class="bg-primary/10 p-4 rounded-xl text-xs">Hi! I'm Kevin's AI. How can I assist you today?</div>
-        </div>
-        <div class="p-4 border-t border-black/5">
-            <input type="text" id="ai-input" placeholder="Type a message..." class="w-full p-3 bg-black/5 rounded-xl outline-none text-xs">
+    <div id="project-modal" onclick="closeModal()">
+        <div class="bg-white dark:bg-slate-900 p-10 rounded-[40px] max-w-xl w-full border border-slate-200 dark:border-slate-700" onclick="event.stopPropagation()">
+            <div id="modal-content"></div>
+            <button onclick="closeModal()" class="mt-8 border-2 border-emerald-500 text-emerald-500 px-8 py-2 rounded-full text-[10px] font-black uppercase hover:bg-emerald-500 hover:text-white transition">Close</button>
         </div>
     </div>
 
-    <div id="projectModal" class="modal">
-        <div class="bg-white p-10 rounded-[40px] max-w-sm w-full relative">
-            <button onclick="toggleModal()" class="absolute top-5 right-5 text-xl">&times;</button>
-            <h3 class="text-2xl font-black uppercase mb-4">Add Project</h3>
-            <input type="text" placeholder="Title" class="w-full bg-black/5 p-4 rounded-xl mb-4 text-black">
-            <button class="w-full bg-orange-500 text-white py-4 rounded-xl font-bold uppercase">Save</button>
+    <div id="ai-chat" class="fixed bottom-24 right-8 w-80 h-[450px] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-[35px] hidden flex-col z-[5000] shadow-2xl overflow-hidden glass-card">
+        <div class="p-5 bg-emerald-500 text-white flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                <span class="font-black text-[10px] uppercase tracking-widest">Keza Intel v1.0</span>
+            </div>
+            <button onclick="toggleChat()"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="chat-msgs" class="flex-1 p-5 overflow-y-auto text-[11px] space-y-4 flex flex-col dark:text-white">
+            <p class="bg-slate-100 dark:bg-slate-800 p-4 rounded-2xl self-start max-w-[85%] border border-slate-200 dark:border-slate-700">
+                Hello! I am Kevin's AI assistant. Ask me about his <strong>projects</strong>, <strong>skills</strong>, or how to <strong>contact</strong> him.
+            </p>
+        </div>
+        <div class="p-4 border-t border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50">
+            <div class="flex gap-2">
+                <input type="text" id="chat-input" placeholder="Type a message..." class="flex-1 bg-transparent outline-none text-xs dark:text-white" onkeypress="if(event.key==='Enter') handleChat()">
+                <button onclick="handleChat()"><i class="fas fa-paper-plane text-emerald-500"></i></button>
+            </div>
         </div>
     </div>
+
+    <button onclick="toggleChat()" class="fixed bottom-8 right-8 w-16 h-16 bg-emerald-500 text-white rounded-2xl flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all z-[5000]">
+        <i class="fas fa-brain text-xl"></i>
+    </button>
 
     <script>
-        // Animations: Sliding Bio and Bar Charts
-        const obs = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if(e.isIntersecting) {
-                    if(e.target.classList.contains('bio-slide')) e.target.classList.add('active');
-                    if(e.target.classList.contains('skill-per')) e.target.style.width = e.target.dataset.width;
-                }
+        // --- THEME ---
+        function toggleTheme() {
+            document.body.classList.toggle('dark');
+            const icon = document.querySelector('#theme-toggle i');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+        }
+
+        // --- PROJECTS DATA ---
+        const projects = [
+            { name: "Smart Blind Stick", category: "IoT", img: "https://images.pexels.com/photos/4050312/pexels-photo-4050312.jpeg", desc: "Assistive technology using ultrasonic sensors and GPS for the visually impaired. Integrates with mobile apps for real-time tracking.", skills: {"IoT": 98, "Hardware": 95} },
+            { name: "Med-ERP System", category: "Software", img: "https://images.pexels.com/photos/7088530/pexels-photo-7088530.jpeg", desc: "A robust hospital management system handling pharmacy records, patient history, and lab results with end-to-end encryption.", skills: {"Database": 90, "Security": 95} },
+            { name: "Clinic AI", category: "Software", img: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg", desc: "Early diagnosis logic for clinical environments using Python and machine learning patterns.", skills: {"AI Logic": 92} },
+            { name: "Health Wearable", category: "IoT", img: "https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg", desc: "Real-time heart rate and oxygen monitoring device designed for remote patient monitoring.", skills: {"Sensors": 88} }
+        ];
+
+        function renderProjects(data) {
+            const grid = document.getElementById('project-grid');
+            grid.innerHTML = data.map(p => `
+                <div class="reveal group bg-slate-50 dark:bg-slate-800 rounded-[40px] overflow-hidden border border-slate-200 dark:border-slate-700 hover:border-emerald-500 transition-all hover:shadow-2xl">
+                    <div class="overflow-hidden h-48">
+                        <img src="${p.img}" class="h-full w-full object-cover group-hover:scale-110 transition-all duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="text-[9px] font-bold text-emerald-500 uppercase mb-2 tracking-widest">${p.category}</div>
+                        <h4 class="font-black uppercase text-sm mb-4 dark:text-white tracking-tight">${p.name}</h4>
+                        <button onclick="openModalByName('${p.name}')" class="text-emerald-600 dark:text-emerald-400 font-bold text-[9px] uppercase tracking-widest underline decoration-2 underline-offset-4">Explore Details</button>
+                    </div>
+                </div>`).join('');
+            initScrollReveal();
+        }
+
+        function filterProjects(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.innerText === category);
             });
-        }, { threshold: 0.3 });
+            const filtered = category === 'All' ? projects : projects.filter(p => p.category === category);
+            renderProjects(filtered);
+        }
 
-        document.querySelectorAll('.bio-slide, .skill-per').forEach(el => obs.observe(el));
+        // --- MODAL ---
+        function openModalByName(name) {
+            const p = projects.find(item => item.name === name);
+            let skillsHtml = Object.entries(p.skills).map(([s, val]) => `
+                <div class="mb-4">
+                    <div class="flex justify-between text-[10px] font-bold uppercase mb-1 dark:text-white"><span>${s}</span><span>${val}%</span></div>
+                    <div class="w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full"><div class="h-full bg-emerald-500" style="width:${val}%"></div></div>
+                </div>`).join('');
+            
+            document.getElementById('modal-content').innerHTML = `
+                <h3 class="text-3xl font-black uppercase mb-4 dark:text-white">${p.name}</h3>
+                <p class="text-slate-500 dark:text-slate-400 mb-8 leading-relaxed">${p.desc}</p>
+                <div class="mt-6">${skillsHtml}</div>
+            `;
+            document.getElementById('project-modal').style.display = 'flex';
+        }
 
-        // UI Controls
-        document.getElementById('themeToggle').onclick = () => document.body.classList.toggle('dark');
-        function toggleChat() { document.getElementById('ai-sidebar').classList.toggle('active'); }
-        function toggleModal() { const m = document.getElementById('projectModal'); m.style.display = (m.style.display==='flex') ? 'none' : 'flex'; }
+        function closeModal() { document.getElementById('project-modal').style.display = 'none'; }
+
+        // --- SCROLL REVEAL ---
+        function initScrollReveal() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('active');
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+
+        // --- AI CHATBOT LOGIC ---
+        function toggleChat() { 
+            const chat = document.getElementById('ai-chat');
+            chat.style.display = (chat.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        function handleChat() {
+            const input = document.getElementById('chat-input');
+            const msgs = document.getElementById('chat-msgs');
+            const query = input.value.toLowerCase().trim();
+            if(!query) return;
+
+            // User Message UI
+            msgs.innerHTML += `<p class="bg-emerald-500 text-white p-3 rounded-2xl rounded-tr-none self-end max-w-[85%] text-[11px] shadow-lg">${input.value}</p>`;
+            
+            let response = "I'm not sure about that. Try asking about Kevin's skills, his location, or his projects!";
+
+            // Basic Logic for "Small things"
+            if(query.includes("hi") || query.includes("hello")) {
+                response = "Hello! How can I help you today?";
+            } else if(query.includes("skill") || query.includes("expert")) {
+                response = "Kevin is an expert in IoT Architecture, Python for AI, and Medical ERP systems.";
+            } else if(query.includes("contact") || query.includes("email")) {
+                response = "You can email Kevin at kezadushime@gmail.com or use the form on this page.";
+            } else if(query.includes("location") || query.includes("where")) {
+                response = "Kevin is based in Rwanda, working on global Health-Tech solutions.";
+            } else if(query.includes("project") || query.includes("work")) {
+                response = "He has built things like the Smart Blind Stick and advanced Medical ERP systems. Check the 'Work' section!";
+            } else if(query.includes("who are you")) {
+                response = "I am Keza Intel, a virtual assistant built to help you navigate Kevin's portfolio.";
+            }
+
+            setTimeout(() => {
+                msgs.innerHTML += `<p class="bg-slate-100 dark:bg-slate-800 p-3 rounded-2xl rounded-tl-none self-start max-w-[85%] text-[11px] border border-slate-200 dark:border-slate-700 shadow-sm">${response}</p>`;
+                msgs.scrollTop = msgs.scrollHeight;
+            }, 600);
+            
+            input.value = "";
+        }
+
+        // --- FORM SUBMISSION ---
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+        const submitBtn = document.getElementById('submitBtn');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<span>Sending...</span> <i class="fas fa-spinner animate-spin"></i>`;
+            
+            const formData = new FormData(contactForm);
+            
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    formStatus.textContent = "Success! Kevin has received your message.";
+                    formStatus.className = "text-center text-[10px] font-bold uppercase tracking-widest mt-4 text-emerald-500 block";
+                    contactForm.reset();
+                } else {
+                    throw new Error();
+                }
+            } catch (error) {
+                formStatus.textContent = "Error. Please email kezadushime@gmail.com directly.";
+                formStatus.className = "text-center text-[10px] font-bold uppercase tracking-widest mt-4 text-red-500 block";
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = `<span>Send Message</span> <i class="fas fa-paper-plane"></i>`;
+            }
+        });
+
+        // Initialize
+        renderProjects(projects);
+        const marqueeInner = document.getElementById('marquee-inner');
+        marqueeInner.innerHTML += marqueeInner.innerHTML; // Loop marquee
     </script>
 </body>
 </html>
